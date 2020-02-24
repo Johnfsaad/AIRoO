@@ -770,3 +770,48 @@ h2 a.navbar-brand i {
 	}
 }
 
+/* blog */
+.blogs-bottom {
+	box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.13);
+}
+
+.blog {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.blog:hover {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+}
+
+.blogs-bottom.p-4 h3 {
+	font-size: 18px;
+	color: #525050;
+}
+
+.blogs-bottom h4 {
+	font-size: 23px;
+	line-height: 1.4;
+	letter-spacing: 1px;
+}
+
+.blogs-bottom i {
+	color: #8e43e7;
+}
+
+.blogs-bottom a {
+	color: #999;
+	letter-spacing: 1px;
+	font-size: 15px;
+}
+
+.blogs-bottom a:Hover {
+	color: #000;
+}
+
+/* //blog */

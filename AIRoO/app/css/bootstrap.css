@@ -1,4 +1,5 @@
 /*!
+/*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
@@ -50,9 +51,8 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-@-ms-viewport {
-  width: device-width;
-}
+
+
 
 article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
@@ -2157,7 +2157,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .form-check-inline {
-  display: -webkit-inline-box;
+
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
@@ -6317,7 +6317,7 @@ button.bg-dark:focus {
     display: flex !important;
   }
   .d-sm-inline-flex {
-    display: -webkit-inline-box !important;
+
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
   }
@@ -6453,7 +6453,7 @@ button.bg-dark:focus {
     display: flex !important;
   }
   .d-print-inline-flex {
-    display: -webkit-inline-box !important;
+
     display: -ms-inline-flexbox !important;
     display: inline-flex !important;
   }
