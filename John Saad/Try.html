@@ -46,5 +46,88 @@ var x = "Volvo" + 16;
 document.getElementById("demo2").innerHTML = x;
 </script>
 
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="function"></p>
+
+<script>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+document.getElementById("function").innerHTML = myFunction(4, 3);
+</script>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation and returns the result:</p>
+
+<p id="functionReturn"></p>
+
+<script>
+var x = myFunction(4, 3);
+document.getElementById("functionReturn").innerHTML = x;
+
+function myFunction(a, b) {
+  return a * b;
+}
+</script>
+
+<h2>JavaScript Objects</h2>
+
+<p id="Object"></p>
+
+<script>
+// Create an object:
+var car = {type:"Fiat", model:"500", color:"white"};
+
+// Display some data from the object:
+document.getElementById("Object").innerHTML = "The car type is " + car.type;
+</script>
+
+<h2>JavaScript Objects</h2>
+
+<p>There are two different ways to access an object property.</p>
+
+<p>You can use person.property or person["property"].</p>
+
+<p id="object2"></p>
+
+<script>
+// Create an object:
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     :  5566
+};
+// Display some data from the object:
+document.getElementById("object2").innerHTML =
+person.firstName + " " + person.lastName;
+</script>
+
+<h2>JavaScript ESCAPE Character Strings</h2>
+
+<p>The escape sequence \" inserts a double quote in a string.</p>
+
+<p id="stringEscape"></p>
+
+<script>
+var x = "We are the so-called \"Vikings\" from the north.";
+document.getElementById("stringEscape").innerHTML = x;
+</script>
+
+
+<h2>Never Create Strings as objects.</h2>
+<p>Strings and objects cannot be safely compared.</p>
+
+<p id="==="></p>
+
+<script>
+var x = "John";        // x is a string
+var y = new String("John");  // y is an object
+document.getElementById("===").innerHTML = (x===y);
+</script>
+
 </body>
 </html>
