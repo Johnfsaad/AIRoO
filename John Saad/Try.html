@@ -129,5 +129,85 @@ var y = new String("John");  // y is an object
 document.getElementById("===").innerHTML = (x===y);
 </script>
 
+<h2>JavaScript String Methods</h2>
+
+<p>The indexOf() method returns the position of the first occurrence of a specified text:</p>
+
+<p id="indexof"></p>
+
+<script>
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+document.getElementById("indexof").innerHTML = pos;
+</script>
+
+<h2>JavaScript Numbers</h2>
+
+<p>A common mistake is to expect this result to be 102030:</p>
+
+<p id="demo4"></p>
+
+<script>
+var x = 10;
+var y = 20;
+var z = "30";
+var result = z + x + y ;
+document.getElementById("demo4").innerHTML = result;
+</script>
+
+
+<h2>JavaScript Global Methods</h2>
+
+<p>The Number() method converts variables to numbers:</p>
+
+<p id="globalMethods"></p>
+
+<script>
+document.getElementById("globalMethods").innerHTML =
+  Number(true) + "<br>" +
+  Number(false) + "<br>" +
+  Number("10") + "<br>" +
+  Number("  10") + "<br>" +
+  Number("10  ") + "<br>" +
+  Number(" 10  ") + "<br>" +
+  Number("10.33") + "<br>" +
+  Number("10,33") + "<br>" +
+  Number("10 33") + "<br>" +
+  Number("John");
+</script>
+
+
+<h2>JavaScript Arrays</h2>
+
+<p id="array"></p>
+
+<script>
+var cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("array").innerHTML = cars;
+</script>
+
+
+<h2>JavaScript ForEach Arrays</h2>
+
+<p>Array.forEach() calls a function for each array element.</p>
+
+<p>Array.forEach() is not supported in Internet Explorer 8 or earlier.</p>
+
+<p id="forEach"></p>
+
+<script>
+var fruits, text;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+document.getElementById("forEach").innerHTML = text;
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+</script>
+
 </body>
 </html>
