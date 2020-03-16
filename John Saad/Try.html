@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+</html>
+
+</head>
+
+<body>
+
+<h2>My First JavaScript</h2>
+
+<button type="button"
+        onclick="document.getElementById('demo').innerHTML = Date()">
+    Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+
+
+<h2>JavaScript Operators</h2>
+
+<p>x = 5, y = 2, calculate z = x + y, and display z:</p>
+
+<p id="demo1"></p>
+
+<script>
+var x = 5;
+var y = 2;
+var z = x + y;
+document.getElementById("demo1").innerHTML = z;
+</script>
+
+<h2>JavaScript</h2>
+
+<p>When adding a string and a number, JavaScript will treat the number as a string.</p>
+
+<p id="demo2"></p>
+
+<script>
+var x = "Volvo" + 16;
+document.getElementById("demo2").innerHTML = x;
+</script>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="function"></p>
+
+<script>
+function myFunction(p1, p2) {
+  return p1 * p2;
+}
+document.getElementById("function").innerHTML = myFunction(4, 3);
+</script>
+
+<h2>JavaScript Functions</h2>
+
+<p>This example calls a function which performs a calculation and returns the result:</p>
+
+<p id="functionReturn"></p>
+
+<script>
+var x = myFunction(4, 3);
+document.getElementById("functionReturn").innerHTML = x;
+
+function myFunction(a, b) {
+  return a * b;
+}
+</script>
+
+<h2>JavaScript Objects</h2>
+
+<p id="Object"></p>
+
+<script>
+// Create an object:
+var car = {type:"Fiat", model:"500", color:"white"};
+
+// Display some data from the object:
+document.getElementById("Object").innerHTML = "The car type is " + car.type;
+</script>
+
+<h2>JavaScript Objects</h2>
+
+<p>There are two different ways to access an object property.</p>
+
+<p>You can use person.property or person["property"].</p>
+
+<p id="object2"></p>
+
+<script>
+// Create an object:
+var person = {
+  firstName: "John",
+  lastName : "Doe",
+  id     :  5566
+};
+// Display some data from the object:
+document.getElementById("object2").innerHTML =
+person.firstName + " " + person.lastName;
+</script>
+
+<h2>JavaScript ESCAPE Character Strings</h2>
+
+<p>The escape sequence \" inserts a double quote in a string.</p>
+
+<p id="stringEscape"></p>
+
+<script>
+var x = "We are the so-called \"Vikings\" from the north.";
+document.getElementById("stringEscape").innerHTML = x;
+</script>
+
+
+<h2>Never Create Strings as objects.</h2>
+<p>Strings and objects cannot be safely compared.</p>
+
+<p id="==="></p>
+
+<script>
+var x = "John";        // x is a string
+var y = new String("John");  // y is an object
+document.getElementById("===").innerHTML = (x===y);
+</script>
+
+<h2>JavaScript String Methods</h2>
+
+<p>The indexOf() method returns the position of the first occurrence of a specified text:</p>
+
+<p id="indexof"></p>
+
+<script>
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+document.getElementById("indexof").innerHTML = pos;
+</script>
+
+<h2>JavaScript Numbers</h2>
+
+<p>A common mistake is to expect this result to be 102030:</p>
+
+<p id="demo4"></p>
+
+<script>
+var x = 10;
+var y = 20;
+var z = "30";
+var result = z + x + y ;
+document.getElementById("demo4").innerHTML = result;
+</script>
+
+
+<h2>JavaScript Global Methods</h2>
+
+<p>The Number() method converts variables to numbers:</p>
+
+<p id="globalMethods"></p>
+
+<script>
+document.getElementById("globalMethods").innerHTML =
+  Number(true) + "<br>" +
+  Number(false) + "<br>" +
+  Number("10") + "<br>" +
+  Number("  10") + "<br>" +
+  Number("10  ") + "<br>" +
+  Number(" 10  ") + "<br>" +
+  Number("10.33") + "<br>" +
+  Number("10,33") + "<br>" +
+  Number("10 33") + "<br>" +
+  Number("John");
+</script>
+
+
+<h2>JavaScript Arrays</h2>
+
+<p id="array"></p>
+
+<script>
+var cars = ["Saab", "Volvo", "BMW"];
+document.getElementById("array").innerHTML = cars;
+</script>
+
+
+<h2>JavaScript ForEach Arrays</h2>
+
+<p>Array.forEach() calls a function for each array element.</p>
+
+<p>Array.forEach() is not supported in Internet Explorer 8 or earlier.</p>
+
+<p id="forEach"></p>
+
+<script>
+var fruits, text;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+document.getElementById("forEach").innerHTML = text;
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+</script>
+
+</body>
+</html>
