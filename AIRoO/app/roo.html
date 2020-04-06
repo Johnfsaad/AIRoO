@@ -35,9 +35,11 @@ Do the following if you're using your customized build of modernizr (http://www.
 
 <script src="js/respond.min.js"></script>
 
-<script src="blockly-master/blockly-master/blockly_compressed.js"></script>
-<script src="blockly-master/blockly-master/blocks_compressed.js"></script>
+<script src="js/Blockly/blockly_compressed.js"></script>
+<script src="js/Blockly/blockly_uncompressed.js"></script>
+<script src="js/Blockly/javascript_compressed.js"></script>
 <script src="blockly-master/blockly-master/msg/js/en.js"></script>
+<script src="js/Blockly/session.js"></script>
 
 </head>
 <body>
@@ -56,28 +58,34 @@ Do the following if you're using your customized build of modernizr (http://www.
 </ul>
 </div>
  
- 
- 
- 
-  
 
-  <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+  <div id="blocklyDiv" style="height: 480px; width: 1200px;"></div>
 
-  <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-    <block type="controls_if"></block>
-    <block type="logic_compare"></block>
-    <block type="controls_repeat_ext"></block>
-    <block type="math_number">
-      <field name="NUM">123</field>
+  <xml id= "toolbox" style="display:none;">
+  <category name= "Session">
+    <block type="Close Session">
+      <field name="openorclose">Close</field>
+      <field name="yesorno">YES</field>
+      <field name="closeropen">Close Session</field>
     </block>
-    <block type="math_arithmetic"></block>
-    <block type="text"></block>
-    <block type="text_print"></block>
+    </category>
   </xml>
 
   <script>
           var workspace = Blockly.inject('blocklyDiv',
+		  
            {toolbox: document.getElementById('toolbox')});
+		   
+		   function runCode(){
+			   window.loopTRAP=1000;
+			  Blockly.JavaScript.INFINITE_LOOP_TRAP = 'if(--window.LoopTrap == 0) throw "Infinite loop.";\n';
+              var code = Blockly.JavaScript.workspaceToCode(workspace);
+			 try {
+             eval(code);
+                 } catch (e) {
+                   alert(e);
+				 }}
+                  		  
    </script>
 
 <footer id="footer" class="text-sm-left text-center">
