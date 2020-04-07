@@ -1,7 +1,7 @@
 
 Blockly.Blocks['closesession'] = {
   init: function() {
-    this.appendDummyInput()
+    this.appendDummyInput("close session")
         .appendField("When\"MOTION\" TO")
         .appendField(new Blockly.FieldDropdown([["CloseSession","Close"], ["Open new Session","Open"], ["",""]]), "openorclose")
         .appendField("Take Vote if the majority ")
