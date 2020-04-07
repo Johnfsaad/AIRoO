@@ -10582,9 +10582,9 @@ Do the following if you're using your customized build of modernizr (http://www.
 
 <script src="js/respond.min.js"></script>
 
-<script src="js/Blockly/blockly_compressed.js"></script>
-<script src="js/Blockly/blockly_uncompressed.js"></script>
-<script src="js/Blockly/javascript_compressed.js"></script>
+<script src="blockly-master/blockly-master/blocks_compressed.js"></script>
+<script src="blockly-master/blockly-master/blockly_uncompressed.js"></script>
+<script src="blockly-master/blockly-master/javascript_compressed.js"></script>
 <script src="blockly-master/blockly-master/msg/js/en.js"></script>
 <script src="js/Blockly/en.js"></script>
 <script src="js/Blockly/logic.js"></script>
@@ -10628,7 +10628,11 @@ Do the following if you're using your customized build of modernizr (http://www.
   <block type="do"></block>
     </category>
  
- 
+ <category name="Variables" colour="330" custom="VARIABLE">
+        <block type="variables_get"></block>
+        <block type="variables_set"></block>
+    </category>
+
  
  
   <category name= "session"colour="120">
