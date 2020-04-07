@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "devDependencies": {
+    "lerna": "^3.19.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "webapp/*"
+    ],
+    "nohoist": [
+      "**/eslint"
+    ]
+  },
+  "scripts": {
+    "start": "yarn workspace react-aad-msal start",
+    "lint": "yarn workspace react-aad-msal lint",
+    "test": "yarn workspace react-aad-msal test",
+    "build": "yarn workspace react-aad-msal build"
+  },
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lerna run --concurrency 1 --stream precommit"
+    }
+  },
+  "version": "0.0.1"
+}

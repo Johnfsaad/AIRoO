@@ -1,0 +1,62 @@
+{
+  "name": "react-javascript-sample",
+  "version": "1.0.0",
+  "description": "A sample React application that demonstrates the Azure AD react component.",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syncweek-react-aad/react-aad.git"
+  },
+  "author": "Laura Bochenek",
+  "contributors": [
+    "Laura Bochenek <laura.bochenek@microsoft.com>",
+    "Omeed Musavi <omusavi@microsoft.com>",
+    "Lilian Kasem <lilian.kasem@microsoft.com>",
+    "Tess DiStefano <tedistef@microsoft.com>",
+    "Lucas Huet-Hudson <lucashh@microsoft.com>",
+    "Zach Miller <zamiller@microsoft.com>",
+    "P.J. Little <pj.little@microsoft.com>",
+    "Shawn Cicoria <shawn.cicoria@microsoft.com>",
+    "Andrew Craswell <andcra@microsoft.com>",
+    "Björn Dalfors <bjorn@binovi.se>"
+  ],
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "msal": "^1.2.0",
+    "react": "^16.12.0",
+    "react-aad-msal": "^2.3.2",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-scripts": "3.3.0",
+    "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.0"
+  },
+  "scripts": {
+    "clean": "node_modules/.bin/rimraf build",
+    "start": "node_modules/.bin/react-scripts start",
+    "build": "node_modules/.bin/react-scripts build",
+    "test": "node_modules/.bin/react-scripts test --env=jsdom",
+    "eject": "node_modules/.bin/react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not ie < 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
