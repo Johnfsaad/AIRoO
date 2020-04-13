@@ -42,6 +42,20 @@ img, object, embed, video {
 	width: 100%;
 	display: block;
 }
+#LayoutDiv2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#blocklyDiv {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
 
 /* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
 
@@ -52,6 +66,20 @@ img, object, embed, video {
 	padding-right: 1.1625%;
 }
 #LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#blocklyDiv {
 	clear: both;
 	float: left;
 	margin-left: 0;
@@ -71,6 +99,20 @@ img, object, embed, video {
 	margin: auto;
 }
 #LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#blocklyDiv {
 	clear: both;
 	float: left;
 	margin-left: 0;

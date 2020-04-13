@@ -1,8 +1,7 @@
-Blockly.Blocks['say'] = {
+Blockly.Blocks['print'] = {
   init: function() {
     this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_CENTRE)
-        .appendField("Say")
+        .appendField("Ptint")
         .appendField(new Blockly.FieldTextInput("\"  \""), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -10,4 +9,4 @@ Blockly.Blocks['say'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};
+};// JavaScript Document

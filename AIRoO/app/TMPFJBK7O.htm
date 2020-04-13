@@ -10218,7 +10218,7 @@ Do the following if you're using your customized build of modernizr (http://www.
 #blocklyContainer {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
 }
 
 #blocklyDiv {
@@ -10441,12 +10441,16 @@ Do the following if you're using your customized build of modernizr (http://www.
 <script src="blockly-master/blockly-master/blocks/text.js"></script>
 <script src="blockly-master/blockly-master/blocks/procedures.js"></script>
 <script src="blockly-master/blockly-master/blocks/variables_dynamic.js"></script>
+<script src="blockly-master/blockly-master/blocks/loops.js"></script>
 
-<script src="js/Blockly/logic.js"></script>
-<script src="js/Blockly/session.js"></script>
+
+
+
 <script src="js/Blockly/say.js"></script>
+<script src="js/Blockly/print.js"></script>
+<script src="js/Blockly/printWithTime.js"></script>
 <script src="js/Blockly/do.js"></script>
-<script src="js/Blockly/listen.js"></script>
+
 
 
 </head>
@@ -10456,6 +10460,10 @@ Do the following if you're using your customized build of modernizr (http://www.
 </div>
 
 <div id='cssmenu'>
+
+
+
+
 <ul>
   <li class='#'><a href='index.html'>Home</a></li>
    <li><a href='conference.html'>Conferences</a></li>
@@ -10576,6 +10584,17 @@ Do the following if you're using your customized build of modernizr (http://www.
   
   
   
+  
+ <category name="Loops" colour="120">
+    <block type="controls_repeat_ext"></block>
+    <block type="controls_whileUntil"></block>
+    <block type="controls_for">
+      
+     
+    </block>
+    <block type="controls_forEach"></block>
+    <block type="controls_flow_statements"></block>
+  </category>
 
 
 
@@ -10627,14 +10646,38 @@ Do the following if you're using your customized build of modernizr (http://www.
 
 
   <sep></sep>
+  <sep></sep>
+  <sep></sep>
   <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
   <category name="Functions" colour="#9A5CA6" custom="PROCEDURE"></category>
+  
+  <sep></sep>
+  <sep></sep>
+  <sep></sep>
+  
+  <category name="Actions" colour="#915848">
+   <block type="say"></block>
+    <block type="print"></block>
+    <block type="printwithtime">
+    <field name="M">20</field>
+    <field name="T">Seconds</field>
+    </block>
+   
+  </category>
+  
+  <category name="Do" colour="#8f9545">
+  <block type="do">
+    <field name="Roll Call">Roll Call</field>
+    </block>
+   </category>
+   
+ 
 </xml>
  
  
  
 
-
+<button onClick="runCode ()">Run JavaScript</button>
   <script>
           var workspace = Blockly.inject('blocklyDiv',
 		  
@@ -10653,11 +10696,9 @@ Do the following if you're using your customized build of modernizr (http://www.
    </script>
    
  
+   <button onClick="runCode ()">Run JavaScript</button>
    
-   
-   <p>
- <button onClick="runCode ()">Run JavaScript</button>
- </p>
+  
 
 <footer id="footer" class="text-sm-left text-center">
   <div class="container py-4 py-sm-5">
