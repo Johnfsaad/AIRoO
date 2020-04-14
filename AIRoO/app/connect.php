@@ -7,7 +7,7 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $cpassword = $_POST['cpassword'];
 
-if (!empty($firstName) || !empty($lastName) || !empty($email) || !empty($password) || !empty(cpassword)) {
+if (!empty($firstName) || !empty($lastName) || !empty($email) || !empty($password) || !empty($cpassword)) {
  $host = "http://www.my-domain.com/phpmyadmin/";
     $dbUsername = "root";
     $dbPassword = "";

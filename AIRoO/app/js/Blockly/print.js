@@ -1,7 +1,7 @@
 Blockly.Blocks['print'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Ptint")
+        .appendField("Print")
         .appendField(new Blockly.FieldTextInput("\"  \""), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
