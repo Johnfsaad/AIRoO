@@ -1,7 +1,7 @@
 Blockly.Blocks['printwithtime'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Ptint")
+        .appendField("Print")
         .appendField(new Blockly.FieldTextInput("\"  \""), "NAME")
         .appendField(" For ")
         .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["10","10"], ["20","20"]]), "T")

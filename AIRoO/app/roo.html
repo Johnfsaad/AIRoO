@@ -56,7 +56,8 @@ Do the following if you're using your customized build of modernizr (http://www.
 <script src="js/Blockly/printWithTime.js"></script>
 <script src="js/Blockly/do.js"></script>
 <script src="js/Blockly/listen.js"></script>
-
+<script src="js/suspend.js"></script>
+<script src="js/Blockly/dolist.js"></script>
 
 
 </head>
@@ -269,13 +270,18 @@ Do the following if you're using your customized build of modernizr (http://www.
     <field name="M">20</field>
     <field name="T">Seconds</field>
     </block>
-   
+   <block type="suspend"></block>
   </category>
   
   <category name="Do" colour="#8f9545">
   <block type="do">
     <field name="Roll Call">Roll Call</field>
     </block>
+    
+    <block type="dolist">
+    <field name="Roll Call">Roll Call</field>
+    </block>
+    
    </category>
    
    
