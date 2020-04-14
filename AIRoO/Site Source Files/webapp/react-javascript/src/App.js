@@ -7,7 +7,26 @@ import {authProvider} from './authProvider';
 import Appbakbak from "./App";
 //import './App.css';
 import './css/styles_co.css';
-import Script from "react-inline-script"
+
+function new_script(src) {
+  return new Promise(function(resolve, reject){
+    var script = document.createElement('script');
+    script.src = src;
+    script.addEventListener('load', function () {
+      resolve();
+    });
+    script.addEventListener('error', function (e) {
+      reject(e);
+    });
+    document.body.appendChild(script);
+  })
+};
+// Promise Interface can ensure load the script only once.
+var jquery = new_script('js/jquery-2.2.3.min.js');
+var bootstrap = new_script('js/bootstrap.js');
+var movetop = new_script('js/move-top.js');
+var easing = new_script('js/easing.js');
+var animations = new_script('js/animations.js');
 
 class App extends Component {
   render() {
