@@ -67,10 +67,6 @@ Do the following if you're using your customized build of modernizr (http://www.
 </div>
 
 <div id='cssmenu'>
-
-
-
-
 <ul>
   <li class='#'><a href='index.html'>Home</a></li>
    <li><a href='conference.html'>Conferences</a></li>
@@ -80,7 +76,82 @@ Do the following if you're using your customized build of modernizr (http://www.
    <li><a href='roo.html'>RoO</a></li>
 </ul>
 </div>
- 
+
+  <audio id="player" controls></audio>
+  <script>
+  const player = document.getElementById('player');
+
+  const handleSuccess = function(stream) {
+    if (window.URL) {
+      player.srcObject = stream;
+    } else {
+      player.src = stream;
+    }
+  };
+
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+      .then(handleSuccess);
+</script>
+
+  <script>
+  const handleSuccess = function(stream) {
+    const context = new AudioContext();
+    const source = context.createMediaStreamSource(stream);
+    const processor = context.createScriptProcessor(1024, 1, 1);
+
+    source.connect(processor);
+    processor.connect(context.destination);
+
+    processor.onaudioprocess = function(e) {
+      // Do something with the data, e.g. convert it to WAV
+      console.log(e.inputBuffer);
+    };
+  };
+
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+      .then(handleSuccess);
+</script>
+
+  <a id="download">Download</a>
+  <button id="stop">Stop</button>
+  <script>
+  let shouldStop = false;
+  let stopped = false;
+  const downloadLink = document.getElementById('download');
+  const stopButton = document.getElementById('stop');
+
+  stopButton.addEventListener('click', function() {
+    shouldStop = true;
+  });
+
+  const handleSuccess = function(stream) {
+    const options = {mimeType: 'audio/webm'};
+    const recordedChunks = [];
+    const mediaRecorder = new MediaRecorder(stream, options);
+
+    mediaRecorder.addEventListener('dataavailable', function(e) {
+      if (e.data.size > 0) {
+        recordedChunks.push(e.data);
+      }
+
+      if(shouldStop === true && stopped === false) {
+        mediaRecorder.stop();
+        stopped = true;
+      }
+    });
+
+    mediaRecorder.addEventListener('stop', function() {
+      downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
+      downloadLink.download = 'acetest.wav';
+    });
+
+    mediaRecorder.start();
+  };
+
+  navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+      .then(handleSuccess);
+
+</script>
 
 <section id="blocklyContainer">
     <div id="blocklyDiv"></div>
