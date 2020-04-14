@@ -29,7 +29,22 @@ var easing = new_script('js/easing.js');
 var animations = new_script('js/animations.js');
 
 class App extends Component {
+  do_load = () => {
+    var self = this;
+    my_script.then(function() {
+      self.setState({'status': 'done'});
+    }).catch(function() {
+      self.setState({'status': 'error'});
+    })
+  }
   render() {
+    var self = this;
+    if (self.state.status === 'start') {
+      self.state.status = 'loading';
+      setTimeout(function () {
+        self.do_load()
+      }, 0);
+    }
     return (
       <div className="App">
         <img src={require("./images/banner_c.jpg")} />
@@ -39,7 +54,7 @@ class App extends Component {
             <ul>
               <li className='#'><a href='index.html'>Home</a></li>
               <li><a href="#services">services</a></li>
-              <li><a href="#contact">Contac Us</a></li>
+              <li><a href="#contact">Contact Us</a></li>
               <li><a href="#register">register</a></li>
             </ul>
           </div>
@@ -458,40 +473,6 @@ class App extends Component {
               </div>
             </div>
           </div>
-        <Script>
-        {`
-            window.onload = function () {
-              document.getElementById("password1").onchange = validatePassword;
-              document.getElementById("password2").onchange = validatePassword;
-            }
-
-            function validatePassword() {
-              var pass2 = document.getElementById("password2").value;
-              var pass1 = document.getElementById("password1").value;
-              if (pass1 != pass2)
-                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-              else
-                document.getElementById("password2").setCustomValidity('');
-        	`},
-          {`
-            jQuery(document).ready(function ($) {
-              $(".scroll").click(function (event) {
-                event.preventDefault();
-
-                $('html,body').animate({
-                  scrollTop: $(this.hash).offset().top
-                }, 1000);
-              });
-            });
-          `},
-          {`
-            $(document).ready(function () {
-              $().UItoTop({
-                easingType: 'easeOutQuart'
-              });
-            });
-          `},
-      </Script>
       </div>
   );
   }
