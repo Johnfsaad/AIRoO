@@ -1,14 +1,15 @@
 Blockly.Blocks['listen'] = {
   init: function() {
-    this.appendDummyInput("listen")
-        .appendField("Listen")
-        .appendField(new Blockly.FieldTextInput("default"), "NAME");
-    this.setColour(230);
+    this.appendValueInput("NAME")
+        .setCheck(null)
+        .appendField(" Listen");
+    this.appendStatementInput("Listen")
+        .setCheck(null)
+        .appendField("Do");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
   }
-  
-  
-  
-  
-};
+};// JavaScript Document

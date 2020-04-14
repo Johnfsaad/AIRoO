@@ -1,3 +1,428 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: css/boilerplate.css" type="text/css">
+<style type="text/css">
+
+/*
+/* 
+ * HTML5 ✰ Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling. 
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
+ * 
+ * Dreamweaver modifications:
+ * 1. Commented out selection highlight
+ * 2. Removed media queries section (we add our own in a separate file)
+ *
+ * ==|== normalize ==========================================================
+ */
+
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+/* 
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+/* Dreamweaver: uncomment these if you do want to customize the selection highlight
+ *::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+ *::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+ */
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9 
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer; }
+
+/* 
+ * 1. Correct color not inheriting in IE6/7/8/9 
+ * 2. Correct alignment displayed oddly in IE6/7 
+ */
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+
+button, input { line-height: normal; *overflow: visible; }
+
+/*
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ */
+
+table button, table input { *overflow: auto; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/* 
+ * Remove inner padding and border in FF3/4: h5bp.com/l 
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* 
+ * 1. Remove default vertical scrollbar in IE6/7/8/9 
+ * 2. Allow only vertical resizing
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+/* ==|== primary styles =====================================================
+   Author: 
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+ 
+ @media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
+
+</style>
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: css/Untitled-2.css" type="text/css">
+<style type="text/css">
+
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
+}
+
+/*
+	Dreamweaver Fluid Grid Properties
+	----------------------------------
+	dw-num-cols-mobile:		5;
+	dw-num-cols-tablet:		8;
+	dw-num-cols-desktop:	10;
+	dw-gutter-percentage:	25;
+	
+	Inspiration from "Responsive Web Design" by Ethan Marcotte 
+	http://www.alistapart.com/articles/responsive-web-design
+	
+	and Golden Grid System by Joni Korpi
+	http://goldengridsystem.com/
+*/
+
+/* Mobile Layout: 480px and below. */
+
+.gridContainer {
+	margin-left: auto;
+	margin-right: auto;
+	width: 87.36%;
+	padding-left: 1.82%;
+	padding-right: 1.82%;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#blocklyDiv {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+
+@media only screen and (min-width: 481px) {
+.gridContainer {
+	width: 90.675%;
+	padding-left: 1.1625%;
+	padding-right: 1.1625%;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#blocklyDiv {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+
+@media only screen and (min-width: 769px) {
+.gridContainer {
+	width: 88.2%;
+	max-width: 1232px;
+	padding-left: 0.9%;
+	padding-right: 0.9%;
+	margin: auto;
+}
+#LayoutDiv1 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#LayoutDiv2 {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#blocklyDiv {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+}
+
+</style>
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: css/bootstrap.css" type="text/css" media="all">
+<style type="text/css" media="all">
+
 /*!
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
@@ -8944,5 +9369,1401 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
-
+}
 /*# sourceMappingURL=bootstrap.css.map */
+
+
+</style>
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: css/style.css" type="text/css" media="all">
+<style type="text/css" media="all">
+
+
+
+body {
+	margin: 0;
+	font-family: 'Ubuntu', sans-serif;
+	background: #fff;
+}
+
+body a,
+.slider-info a {
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	text-decoration: none;
+	outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+p {
+	margin: 0;
+	color: #8c8c8c;
+	font-size: 1em;
+	line-height: 2;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+body a:hover {
+	text-decoration: none;
+}
+
+body a:focus {
+	outline: none;
+	text-decoration: none;
+}
+
+.list-group-item {
+	background-color: transparent;
+}
+
+
+
+#toTop {
+	display: none;
+	text-decoration: none;
+	position: fixed;
+	bottom: 24px;
+	right: 3%;
+	overflow: hidden;
+	z-index: 999;
+	width: 32px;
+	height: 32px;
+	border: none;
+	text-indent: 100%;
+	background: url(images/move-top.png) no-repeat 0px 0px;
+}
+
+#toTopHover {
+	width: 32px;
+	height: 32px;
+	display: block;
+	overflow: hidden;
+	float: right;
+	opacity: 0;
+	-moz-opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+
+
+
+
+
+
+header h1,
+footer h2 {
+	line-height: 0;
+}
+
+.navbar-light {
+	padding: 1em 5em;
+	position: absolute;
+	z-index: 999;
+	width: 100%;
+	left: 0;
+}
+
+a.navbar-brand {
+	font-family: 'Ubuntu', sans-serif;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 0.7em;
+	letter-spacing: 1px;
+}
+
+a.navbar-brand i {
+	color: rgba(0, 0, 0, 0.18);
+	font-size: 2em;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	font-weight: 600;
+	text-transform: capitalize;
+	color: #fff;
+	padding: 4px 15px;
+	letter-spacing: 1px;
+	-webkit-transition: 0.5s all ease;
+	-moz-transition: 0.5s all ease;
+	-o-transition: 0.5s all ease;
+	-ms-transition: 0.5s all ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+	color: #000000;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 20px 5px -10px rgba(0, 0, 0, 0.15);
+	transform: translateY(5px);
+	transform: translateY(5px);
+	-ms-transform: translateY(5px);
+	-o-transform: translateY(5px);
+	-webkit-transform: translateY(5px);
+}
+
+.dropdown-item {
+	color: #fff;
+}
+
+.dropdown-item,
+.dropdown-item.active,
+.dropdown-item:active {
+	background-color: white;
+	color: #000 !important;
+	font-weight: 600;
+}
+
+.ls-btn {
+	letter-spacing: 1px;
+	font-weight: 600;
+	background: transparent;
+	border: 2px solid #fff;
+	padding: 4px 15px;
+	background: #eee;
+}
+
+
+
+.banner {
+	background: url(images/banner.jpg) center no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	position: relative;
+}
+
+.inner-banner {
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	-ms-background-size: cover;
+	background-size: cover;
+	min-height: 200px;
+	position: relative;
+}
+
+.banner-text {
+	padding: 14vw 0;
+	box-sizing: border-box;
+}
+
+.slider-info {
+	text-align: right;
+	width: 600px;
+	margin-left: auto;
+}
+
+.slider-info h3 {
+	font-size: 4em;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 600;
+}
+
+.agile-link-bnr {
+	padding: 15px 80px;
+	color: #fff;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-size: 17px;
+	background: #00bbf3;
+	border: none;
+	border-radius: 30px;
+}
+
+.agile-link-cnt {
+	padding: 15px 40px;
+	color: #fff;
+	letter-spacing: 2px;
+	font-size: 16px;
+	background: #00bbf3;
+	border: none;
+	border-radius: 30px;
+	text-transform: uppercase;
+}
+
+footer {
+	background: #000;
+}
+
+.fv3-contact {
+	padding: 0.5rem 1rem;
+}
+
+ul.social-iconsv2 li {
+	display: inline-block;
+	border-radius: 50%;
+}
+
+ul.social-iconsv2 li a {
+	text-decoration: none;
+	font-size: 16px;
+}
+
+ul.social-iconsv2 li a i.fab {
+	font-size: 18px;
+	line-height: 38px;
+	width: 30px;
+	height: 37px;
+	color: #000;
+	margin-right: 15px;
+	border-radius: 50%;
+	background-color: transparent;
+	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+}
+
+ul.list-agileits li a {
+	color: #fdfdfe;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+ul.social-iconsv2 li:first-child a {
+	color: #fdfdfe;
+}
+
+ul.social-iconsv2 li:last-child {
+	color: #287bbc;
+}
+
+.fv3-contact p {
+	font-weight: 600;
+}
+
+.fv3-contact p a {
+	color: #fdfdfe;
+}
+
+
+
+.cpy-right p {
+	letter-spacing: 1px;
+	font-size: 14px;
+	color: #fff;
+}
+
+
+
+.modal-content {
+	position: relative;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	width: 100%;
+	pointer-events: auto;
+	border: 10px solid rgba(0, 0, 0, 0.19);
+	border-radius: 0.3rem;
+	outline: 0;
+	color: #fff;
+	font-family: 'Ubuntu', sans-serif;
+	background: #fff;
+}
+
+.right-l input[type="submit"] {
+	background: #00bbf3;
+	border: none;
+	color: #fff;
+	font-size: 1em;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 1px;
+	font-family: 'Ubuntu', sans-serif;
+	cursor: pointer;
+}
+
+.col-form-label {
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #000;
+	font-size: 13px;
+	letter-spacing: 1px;
+}
+
+.modal-header {
+	background: #fff;
+	color: #000;
+	border: none;
+	text-transform: uppercase;
+	margin: 0 auto;
+}
+
+.modal-body {
+	position: relative;
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding: 1rem;
+}
+
+/* //modal */
+
+
+
+.register {
+	background: #fff;
+}
+
+.register-bottom p span {
+	color: #ff5f09;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	margin-left: 5px;
+}
+
+h3.agile-title {
+	font-size: 4em;
+	text-transform: uppercase;
+	font-weight: 800;
+	color: #000;
+	margin-bottom: 1em;
+}
+
+.register-bottom h5 {
+	color: #777;
+	font-size: 1.5em;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.register-bottom h5 i {
+	color: #000;
+}
+
+.title-wthree span {
+	background: #083276;
+	width: 50px;
+	height: 6px;
+	margin: 0 0 1.5em;
+	display: inline-block;
+}
+
+.fv3-register h6 {
+	text-transform: uppercase;
+	color: #000;
+	margin-bottom: 10px;
+}
+
+.address h5 {
+	color: #000;
+	text-transform: capitalize;
+	font-size: 1.1em;
+}
+
+.address p a,
+p.c-txt {
+	color: #777;
+}
+
+.address p a:hover {
+	color: #000;
+}
+
+form.register-wthree label {
+	line-height: 2.5;
+	color: #000;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+form.register-wthree label span {
+	color: #00bbf3;
+}
+
+.btn-agile {
+	background: #000;
+	color: #fff;
+	padding: 15px 10px;
+	border-radius: 30px;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+form.register-wthree .form-control {
+	border-radius: 0;
+	border: none;
+	background: #eee;
+}
+
+.register-top1 h5 {
+	font-size: 2em;
+}
+
+.address h5 {
+	font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+#services {
+	background: #2d2d2d;
+}
+
+h4.sec-title {
+	margin: 1.2em 0;
+	text-transform: uppercase;
+	color: #ff5f09;
+	font-size: 1.5em;
+}
+
+h4.sec-title1 {
+	margin: 0 1.2em;
+	text-transform: uppercase;
+	color: #000;
+	font-size: 1.5em;
+}
+
+.agileits-services-grids i {
+	font-size: 2em;
+	color: #d56e9b;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	box-shadow: 7px 4px 5px rgba(0, 0, 0, 0.37);
+	border-radius: 50%;
+}
+
+.agileits-services-grids p {
+	color: #8c8c8c;
+}
+
+.agileits-services-grids span {
+	width: 70px;
+	height: 1px;
+	background: #2d2d2d;
+	display: block;
+	margin-bottom: 1em;
+}
+
+.agileits-services-grids {
+	background: rgba(0, 0, 0, 0.57);
+	padding: 2em;
+}
+
+a.service-btn {
+	background: #77bce7;
+	color: #fff;
+	font-size: 12px;
+	text-transform: capitalize;
+	padding: 6px 15px;
+	display: inline-block;
+	margin: 10px 0 0;
+	border-radius: 5px;
+	letter-spacing: 1px;
+}
+
+
+
+
+
+#partners {
+	background: url(images/partners.jpg) center no-repeat;
+	background-size: cover;
+}
+
+textarea {
+	height: 200px;
+	resize: none;
+}
+
+
+
+
+
+
+footer {
+	background: url(images/footer.jpg) center no-repeat;
+	background-size: cover;
+}
+
+.fv3-contact span {
+	color: #eee;
+}
+
+h2 a.navbar-brand {
+	font-family: 'Ubuntu', sans-serif;
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 1em;
+}
+
+h2 a.navbar-brand i {
+	color: rgba(0, 0, 0, 0.18);
+	font-size: 2em;
+}
+
+.form-control:focus {
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0);
+}
+
+.footer-end-grid {
+	padding-left: 4em;
+}
+
+
+
+@media screen and (max-width: 1600px) {}
+
+@media screen and (max-width: 1440px) {}
+
+@media screen and (max-width: 1366px) {}
+
+@media screen and (max-width: 1280px) {
+	.slider-info h3 {
+		font-size: 3.5em;
+	}
+	h3.agile-title {
+		font-size: 3.5em;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.slider-info h3 {
+		font-size: 3.2em;
+	}
+	.footer-end-grid {
+		padding-left: 0em;
+	}
+	ul.partners-icon li i {
+		font-size: 7em;
+	}
+	h4.sec-title1.flow-odd {
+		margin-right: 0.5em;
+	}
+	.process-direction {
+		transform: rotate(117deg);
+		left: -67%;
+		width: 97%;
+		top: 235px;
+	}
+	.process-direction2 {
+		transform: rotate(63deg);
+		left: -66%;
+		width: 97%;
+		top: -208px;
+	}
+}
+
+@media screen and (max-width: 1050px) {}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 991px) {
+	.navbar-collapse {
+		background: #082a55;
+		padding: 1em;
+	}
+	.dropdown-menu.show {
+		text-align: center;
+	}
+	h3.agile-title {
+		font-size: 3em;
+	}
+	ul.partners-icon li {
+		margin: 0 1em;
+	}
+	ul.partners-icon li i {
+		font-size: 6em;
+	}
+	.process-direction,
+	span.process-circle,
+	.process-direction2 {
+		display: none;
+	}
+	h4.sec-title1 {
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 900px) {}
+
+@media screen and (max-width: 800px) {
+	.slider-info h3 {
+		font-size: 2.8em;
+	}
+	.agile-link-cnt {
+		padding: 10px 30px;
+		letter-spacing: 1px;
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.agile-link-bnr {
+		padding: 9px 48px;
+		font-size: 15px;
+	}
+	h3.agile-title {
+		font-size: 2.5em;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.slider-info {
+		width: 547px;
+		padding-top: 3em;
+	}
+	ul.partners-icon li i {
+		font-size: 4.5em;
+	}
+	.footer-bottom-cpy {
+		display: flex;
+		flex-direction: column;
+	}
+	.cpy-right {
+		order: 1;
+		max-width: 100%;
+	}
+	social-icons {
+		order: 0;
+	}
+}
+
+@media screen and (max-width: 667px) {
+	.slider-info h3 {
+		font-size: 2.5em;
+	}
+}
+
+@media screen and (max-width: 640px) {}
+
+@media screen and (max-width: 600px) {
+	.slider-info {
+		width: auto;
+	}
+	.slider-info h3 {
+		font-size: 2.3em;
+	}
+}
+
+@media screen and (max-width: 568px) {
+	h3.agile-title {
+		font-size: 1.8em;
+	}
+	.btn-agile {
+		padding: 10px;
+	}
+	.slider-info h3 {
+		font-size: 1.8em;
+	}
+	form.register-wthree label {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.navbar-light {
+		padding: 1em 2em;
+	}
+	ul.partners-icon li i {
+		font-size: 3.5em;
+	}
+	h4.sec-title1 {
+		font-size: 1.2em;
+	}
+	.agile-link-bnr {
+		padding: 7px 30px;
+		font-size: 14px;
+	}
+	.agile-link-cnt {
+		padding: 8px 30px;
+		letter-spacing: 0px;
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	a.navbar-brand i {
+		font-size: 1.5em;
+	}
+	ul.partners-icon li {
+		margin: 0 0.5em;
+	}
+}
+
+@media screen and (max-width: 384px) {
+	.agile-link-bnr {
+		padding: 6px 25px;
+		font-size: 14px;
+		letter-spacing: 0;
+	}
+	h3.agile-title {
+		font-size: 1.5em;
+	}
+	ul.partners-icon li {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.slider-info h3 {
+		font-size: 1.6em;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.register-bottom h5 {
+		font-size: 1.3em;
+	}
+}
+
+/* blog */
+.blogs-bottom {
+	box-shadow: 0px 2px 10px 1px rgba(0, 0, 0, 0.13);
+}
+
+.blog {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.blog:hover {
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+}
+
+.blogs-bottom.p-4 h3 {
+	font-size: 18px;
+	color: #525050;
+}
+
+.blogs-bottom h4 {
+	font-size: 23px;
+	line-height: 1.4;
+	letter-spacing: 1px;
+}
+
+.blogs-bottom i {
+	color: #8e43e7;
+}
+
+.blogs-bottom a {
+	color: #999;
+	letter-spacing: 1px;
+	font-size: 15px;
+}
+
+.blogs-bottom a:Hover {
+	color: #000;
+}
+
+/* //blog */
+
+
+</style>
+ 
+  
+<!-- 
+To learn more about the conditional comments around the html tags at the top of the file:
+paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+Do the following if you're using your customized build of modernizr (http://www.modernizr.com/):
+* insert the link to your js here
+* remove the link below to the html5shiv
+* add the "no-js" class to the html tags at the top
+* you can also remove the link to respond.min.js if you included the MQ Polyfill in your modernizr build 
+-->
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: css/b.css">
+<style type="text/css">
+
+#blocklyContainer {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+
+#blocklyDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}/* CSS Document */
+
+
+
+</style>
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: css/styles_co.css">
+<style type="text/css">
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(http://fonts.gstatic.com/s/raleway/v14/1Ptug8zYS_SKggPNyC0ISg.ttf) format('truetype');
+}
+
+
+@import url(Disabled for Preview-in-Browser: http://fonts.googleapis.com/css?family=Raleway);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a,
+#cssmenu #menu-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu #menu-button {
+  display: none;
+}
+#cssmenu {
+  width: auto;
+  font-family: Raleway, sans-serif;
+  line-height: 1;
+}
+#cssmenu > ul {
+  background: #3db2e1;
+}
+#cssmenu > ul > li {
+  float: left;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  perspective: 1000px;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu > ul > li > a {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #3db2e1;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+#cssmenu > ul > li.active > a {
+  color: #dff2fa;
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #dff2fa;
+  -webkit-transform: rotateX(90deg) translateY(-23px);
+  -moz-transform: rotateX(90deg) translateY(-23px);
+  transform: rotateX(90deg) translateY(-23px);
+  -ms-transform: none;
+}
+#cssmenu > ul > li > a::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: -1;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 16px 20px;
+  color: #dff2fa;
+  background: #19799f;
+  content: attr(data-title);
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  transition: background 0.3s;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 0;
+  -moz-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -ms-transform: translateY(- -18px);
+}
+#cssmenu > ul > li:hover > a::before,
+#cssmenu > ul > li > a:hover::before {
+  background: #3db2e1;
+}
+#cssmenu.small-screen {
+  width: 100%;
+}
+#cssmenu.small-screen > ul,
+#cssmenu.small-screen.align-center > ul {
+  width: 100%;
+  text-align: left;
+}
+#cssmenu.small-screen > ul > li,
+#cssmenu.small-screen.align-center {
+  float: none;
+  display: block;
+  border-top: 1px solid rgba(100, 100, 100, 0.1);
+}
+#cssmenu.small-screen > ul > li:hover > a,
+#cssmenu.small-screen > ul > li > a:hover {
+  color: #dff2fa;
+  -webkit-transform: none;
+  -moz-transform: none;
+  transform: none;
+  -ms-transform: none;
+}
+#cssmenu.small-screen > ul > li > a::before {
+  display: none;
+}
+#cssmenu.small-screen #menu-button {
+  display: block;
+  padding: 16px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: #3db2e1;
+}
+#cssmenu.small-screen #menu-button:after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 17px;
+  display: block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  width: 22px;
+  height: 3px;
+}
+#cssmenu.small-screen #menu-button.menu-opened:after {
+  border-top: 2px solid #dff2fa;
+  border-bottom: 2px solid #dff2fa;
+}
+#cssmenu.small-screen #menu-button:before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 27px;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #ffffff;
+}
+#cssmenu.small-screen #menu-button.menu-opened:before {
+  background: #dff2fa;
+}
+
+
+</style>
+   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   <script src="js/script_co.js"></script>
+
+
+<script src="js/respond.min.js"></script>
+
+<script src="blockly-master/blockly-master/blockly_compressed.js"></script>
+<script src="blockly-master/blockly-master/blockly_uncompressed.js"></script>
+<script src="blockly-master/blockly-master/javascript_compressed.js"></script>
+<script src="blockly-master/blockly-master/msg/js/en.js"></script>
+<script src="blockly-master/blockly-master/blocks/variables.js"></script>
+<script src="blockly-master/blockly-master/blocks/lists.js"></script>
+<script src="blockly-master/blockly-master/blocks/text.js"></script>
+<script src="blockly-master/blockly-master/blocks/procedures.js"></script>
+<script src="blockly-master/blockly-master/blocks/variables_dynamic.js"></script>
+<script src="blockly-master/blockly-master/blocks/loops.js"></script>
+
+
+
+
+<script src="js/Blockly/say.js"></script>
+<script src="js/Blockly/print.js"></script>
+<script src="js/Blockly/printWithTime.js"></script>
+<script src="js/Blockly/do.js"></script>
+
+
+
+</head>
+<body>
+  <img src="images/banner_c.jpg">
+  <div id="LayoutDiv1">
+</div>
+
+<div id='cssmenu'>
+
+
+
+
+<ul>
+  <li class='#'><a href='index.html'>Home</a></li>
+   <li><a href='conference.html'>Conferences</a></li>
+   <li><a href='committee.html'>Committees </a></li>
+   <li><a href='section.html'>Section</a></li>
+   <li><a href='audit.html'>Audit</a></li>
+   <li><a href='roo.html'>RoO</a></li>
+</ul>
+</div>
+ 
+
+<section id="blocklyContainer">
+    <div id="blocklyDiv"></div>
+</section>
+
+
+
+
+
+
+ <xml id= "toolbox" style="display:none;">
+ 
+ 
+  <category name="Text" colour="#5CA68D">
+    <block type="text_charAt">
+      <mutation at="true"></mutation>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="G1L.Z/,8={hV#-q8hx|k" variabletype="">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text">
+      <field name="TEXT"></field>
+    </block>
+    <block type="text_append">
+      <field name="VAR" id="ZZWW3YzH`I^K4Q[]7KB-" variabletype="">item</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_length">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_isEmpty">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="G1L.Z/,8={hV#-q8hx|k" variabletype="">text</field>
+        </block>
+      </value>
+      <value name="FIND">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_join">
+      <mutation items="2"></mutation>
+    </block>
+    <block type="text_getSubstring">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="STRING">
+        <block type="variables_get">
+          <field name="VAR" id="G1L.Z/,8={hV#-q8hx|k" variabletype="">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_changeCase">
+      <field name="CASE">UPPERCASE</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_trim">
+      <field name="MODE">BOTH</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <mutation type="TEXT"></mutation>
+      <field name="TYPE">TEXT</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  
+  
+  
+  
+ <category name="Loops" colour="120">
+    <block type="controls_repeat_ext"></block>
+    <block type="controls_whileUntil"></block>
+    <block type="controls_for">
+      
+     
+    </block>
+    <block type="controls_forEach"></block>
+    <block type="controls_flow_statements"></block>
+  </category>
+
+
+
+<category name="Lists" colour="260">
+    <block type="lists_create_with"></block>
+    <block type="lists_repeat"></block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_indexOf">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getIndex">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_split">
+      <value name="DELIM">
+        <shadow type="text">
+          <field name="TEXT">,</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_sort"></block>
+  </category>
+
+
+
+
+
+  <sep></sep>
+  <sep></sep>
+  <sep></sep>
+  <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
+  <category name="Functions" colour="#9A5CA6" custom="PROCEDURE"></category>
+  
+  <sep></sep>
+  <sep></sep>
+  <sep></sep>
+  
+  <category name="Actions" colour="#915848">
+   <block type="say"></block>
+    <block type="print"></block>
+    <block type="printwithtime">
+    <field name="M">20</field>
+    <field name="T">Seconds</field>
+    </block>
+   
+  </category>
+  
+  <category name="Do" colour="#8f9545">
+  <block type="do">
+    <field name="Roll Call">Roll Call</field>
+    </block>
+   </category>
+   
+ 
+</xml>
+ 
+ 
+ 
+
+<button onClick="runCode ()">Run JavaScript</button>
+  <script>
+          var workspace = Blockly.inject('blocklyDiv',
+		  
+           {toolbox: document.getElementById('toolbox')});
+		   
+		   function runCode(){
+			   window.loopTRAP=1000;
+			  Blockly.JavaScript.INFINITE_LOOP_TRAP = 'if(--window.LoopTrap == 0) throw "Infinite loop.";\n';
+              var code = Blockly.JavaScript.workspaceToCode(workspace);
+			 try {
+             eval(code);
+                 } catch (e) {
+                   alert(e);
+				 }}
+                  		  
+   </script>
+   
+ 
+   <button onClick="runCode ()">Run JavaScript</button>
+   
+  
+
+<footer id="footer" class="text-sm-left text-center">
+  <div class="container py-4 py-sm-5">
+    <h2>
+      <a class="navbar-brand text-white" href="index.html">
+        <i class="fab fa-laravel"></i> AIRoO
+      </a>
+    </h2>
+    <div class="row py-sm-5 py-3">
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        <ul class="list-agileits">
+          <li>
+            <a href="index.html" class="nav-link">
+              Home
+            </a>
+          </li>
+          <li class="my-2">
+            <a href='conference.html'>Conferences</a></li>
+          <li><a href='committee.html'>Committees </a></li>
+          <li><a href='section.html'>Section</a></li>
+          <li><a href='audit.html'>Audit</a></li>
+          <li><a href='roo.html'>RoO</a></li>
+        </ul>
+      </div>
+      
+      <div class="col-lg-2 col-md-4 col-sm-6 mt-sm-5">
+        <ul class="list-agileits">
+
+
+
+        </ul>
+      </div>
+      <div class="offset-lg-5"></div>
+      <div class="col-lg-3 col-md-4 footer-end-grid mt-md-0 mt-sm-5">
+        <div class="fv3-contact">
+          <span class="fas fa-phone mr-2"></span>
+          <p class="d-inline">
+            111 22 3333
+          </p>
+        </div>
+        <div class="fv3-contact">
+          <span class="fas fa-mobile mr-2"></span>
+          <p class="d-inline">
+            111 22 3333
+          </p>
+        </div>
+        <div class="fv3-contact">
+          <span class="fas fa-envelope-open mr-2"></span>
+          <p class="d-inline">
+            <a href="mailto:example@email.com">info@airoo.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between pt-lg-5   footer-bottom-cpy">
+      <div class="cpy-right text-center">
+        <p>© 2020 AIRoo. All rights reserved
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

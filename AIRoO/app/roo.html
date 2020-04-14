@@ -13,7 +13,7 @@
 <link href="css/Untitled-2.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-  <link rel="stylesheet" href="css/style_b.css">
+ 
   
 <!-- 
 To learn more about the conditional comments around the html tags at the top of the file:
@@ -28,23 +28,36 @@ Do the following if you're using your customized build of modernizr (http://www.
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+<link rel="stylesheet" href="css/b.css">
 <link rel="stylesheet" href="css/styles_co.css">
+<link rel="stylesheet" href="css/Blockly/styleblockly.css">
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
    <script src="js/script_co.js"></script>
 
 
 <script src="js/respond.min.js"></script>
 
-<script src="js/Blockly/blockly_compressed.js"></script>
-<script src="js/Blockly/blockly_uncompressed.js"></script>
-<script src="js/Blockly/javascript_compressed.js"></script>
+<script src="blockly-master/blockly-master/blockly_compressed.js"></script>
+<script src="blockly-master/blockly-master/blockly_uncompressed.js"></script>
+<script src="blockly-master/blockly-master/javascript_compressed.js"></script>
 <script src="blockly-master/blockly-master/msg/js/en.js"></script>
-<script src="js/Blockly/en.js"></script>
-<script src="js/Blockly/logic.js"></script>
-<script src="js/Blockly/session.js"></script>
+<script src="blockly-master/blockly-master/blocks/variables.js"></script>
+<script src="blockly-master/blockly-master/blocks/lists.js"></script>
+<script src="blockly-master/blockly-master/blocks/text.js"></script>
+<script src="blockly-master/blockly-master/blocks/procedures.js"></script>
+<script src="blockly-master/blockly-master/blocks/variables_dynamic.js"></script>
+<script src="blockly-master/blockly-master/blocks/loops.js"></script>
+
+
+
+
 <script src="js/Blockly/say.js"></script>
+<script src="js/Blockly/print.js"></script>
+<script src="js/Blockly/printWithTime.js"></script>
 <script src="js/Blockly/do.js"></script>
 <script src="js/Blockly/listen.js"></script>
+
+
 
 </head>
 <body>
@@ -53,6 +66,10 @@ Do the following if you're using your customized build of modernizr (http://www.
 </div>
 
 <div id='cssmenu'>
+
+
+
+
 <ul>
   <li class='#'><a href='index.html'>Home</a></li>
    <li><a href='conference.html'>Conferences</a></li>
@@ -64,7 +81,10 @@ Do the following if you're using your customized build of modernizr (http://www.
 </div>
  
 
-  <div id="blocklyDiv" style="height: 480px; width: 1200px;"></div>
+<section id="blocklyContainer">
+    <div id="blocklyDiv"></div>
+  
+</section>
 
 
 
@@ -74,25 +94,199 @@ Do the following if you're using your customized build of modernizr (http://www.
  <xml id= "toolbox" style="display:none;">
  
  
- 
- <category name= "Listen Say Do"colour="220">
-  <block type="listen"></block>
-  <block type="say"></block>
-  <block type="do"></block>
-    </category>
- 
- 
- 
- 
-  <category name= "session"colour="120">
-    <block type="closesession">
-      <field name="openorclose">Close</field>
-      <field name="yesorno">YES</field>
-      <field name="closeropen">Close Session</field>
+  <category name="Text" colour="#5CA68D">
+    <block type="text_charAt">
+      <mutation at="true"></mutation>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="G1L.Z/,8={hV#-q8hx|k" variabletype="">text</field>
+        </block>
+      </value>
     </block>
-    </category>
-  </xml>
+    <block type="text">
+      <field name="TEXT"></field>
+    </block>
+    <block type="text_append">
+      <field name="VAR" id="ZZWW3YzH`I^K4Q[]7KB-" variabletype="">item</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_length">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_isEmpty">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="G1L.Z/,8={hV#-q8hx|k" variabletype="">text</field>
+        </block>
+      </value>
+      <value name="FIND">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_join">
+      <mutation items="2"></mutation>
+    </block>
+    <block type="text_getSubstring">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="STRING">
+        <block type="variables_get">
+          <field name="VAR" id="G1L.Z/,8={hV#-q8hx|k" variabletype="">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_changeCase">
+      <field name="CASE">UPPERCASE</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_trim">
+      <field name="MODE">BOTH</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <mutation type="TEXT"></mutation>
+      <field name="TYPE">TEXT</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
   
+  
+  
+  
+ <category name="Loops" colour="120">
+    <block type="controls_repeat_ext"></block>
+    <block type="controls_whileUntil"></block>
+    <block type="controls_for">
+      
+     
+    </block>
+    <block type="controls_forEach"></block>
+    <block type="controls_flow_statements"></block>
+  </category>
+
+
+
+<category name="Lists" colour="260">
+    <block type="lists_create_with"></block>
+    <block type="lists_repeat"></block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_indexOf">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getIndex">
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR">{listVariable}</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_split">
+      <value name="DELIM">
+        <shadow type="text">
+          <field name="TEXT">,</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_sort"></block>
+  </category>
+
+
+
+
+
+  <sep></sep>
+  <sep></sep>
+  <sep></sep>
+  <category name="Variables" colour="#A65C81" custom="VARIABLE"></category>
+  <category name="Functions" colour="#9A5CA6" custom="PROCEDURE"></category>
+  
+  <sep></sep>
+  <sep></sep>
+  <sep></sep>
+  
+  <category name="Actions" colour="#915848">
+   <block type="say"></block>
+    <block type="print"></block>
+    <block type="printwithtime">
+    <field name="M">20</field>
+    <field name="T">Seconds</field>
+    </block>
+   
+  </category>
+  
+  <category name="Do" colour="#8f9545">
+  <block type="do">
+    <field name="Roll Call">Roll Call</field>
+    </block>
+   </category>
+   
+   
+   <category name="Listen" colour="#4b6d95">
+  <block type="listen">
+  </category>
+</xml>
+ 
+ 
+ 
+
 
   <script>
           var workspace = Blockly.inject('blocklyDiv',
@@ -111,12 +305,12 @@ Do the following if you're using your customized build of modernizr (http://www.
                   		  
    </script>
    
+
+ 
+   <button class="button button2" onClick="runCode ()">Run Codet</button>
    
-   
-   
-   <p>
- <button onClick="runCode ()">Run JavaScript</button>
- </p>
+
+
 
 <footer id="footer" class="text-sm-left text-center">
   <div class="container py-4 py-sm-5">
@@ -135,10 +329,10 @@ Do the following if you're using your customized build of modernizr (http://www.
           </li>
           <li class="my-2">
             <a href='conference.html'>Conferences</a></li>
-        <li><a href='committee.html'>Committees </a></li>
-        <li><a href='section.html'>Section</a></li>
-        <li><a href='audit.html'>Audit</a></li>
-        <li><a href='roo.html'>RoO</a></li>
+          <li><a href='committee.html'>Committees </a></li>
+          <li><a href='section.html'>Section</a></li>
+          <li><a href='audit.html'>Audit</a></li>
+          <li><a href='roo.html'>RoO</a></li>
         </ul>
       </div>
       
@@ -181,6 +375,7 @@ Do the following if you're using your customized build of modernizr (http://www.
     </div>
   </div>
 </footer>
+
 
 </body>
 </html>

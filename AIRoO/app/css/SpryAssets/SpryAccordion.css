@@ -17,10 +17,26 @@
  * Accordion container.
  */
 .Accordion {
-	border-left: solid 1px gray;
-	border-right: solid 1px black;
-	border-bottom: solid 1px gray;
 	overflow: hidden;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-right-style: 0;
+	border-bottom-style: 0;
+	border-left-style: 0;
+	border-top-color: #BBB;
+	border-right-color: #BBB;
+	border-bottom-color: #000000;
+	text-align: left;
+	text-indent: 11px;
+	white-space: normal;
+	vertical-align: 100%;
+	letter-spacing: normal;
+	color: #000;
+	font-weight: 30;
+	padding: 0px;
+	border-top-width: 0px;
+	border-top-style: 0;
 }
 
 /* This is the selector for the AccordionPanel container which houses the
@@ -33,7 +49,11 @@
 */
 .AccordionPanel {
 	margin: 0px;
-	padding: 0px;
+	color: #38434A;
+	padding-top: 4px;
+	padding-right: 0px;
+	padding-bottom: 3px;
+	padding-left: 0px;
 }
 
 /* This is the selector for the AccordionPanelTab. This container houses
@@ -53,14 +73,21 @@
  * you can safely remove those properties without affecting the functionality of the widget.
  */
 .AccordionPanelTab {
-	background-color: #CCCCCC;
-	border-top: solid 1px black;
-	border-bottom: solid 1px gray;
+	background-color: #38434A;
 	margin: 0px;
-	padding: 2px;
-	cursor: pointer;
+	cursor: auto;
 	-moz-user-select: none;
 	-khtml-user-select: none;
+	text-align: left;
+	padding-top: 20px;
+	padding-right: 0px;
+	padding-bottom: 20px;
+	padding-left: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	color: #FFF;
 }
 
 /* This is the selector for a Panel's Content area. It's important to note that
@@ -79,7 +106,8 @@
 	overflow: auto;
 	margin: 0px;
 	padding: 0px;
-	height: 200px;
+	height: 350px;
+	color: #38434A;
 }
 
 /* This is an example of how to change the appearance of the panel tab that is
@@ -87,7 +115,9 @@
  * from panels as the user clicks on the tabs within the Accordion.
  */
 .AccordionPanelOpen .AccordionPanelTab {
-	background-color: #EEEEEE;
+	background-color: #38434A;
+	color: #FFF;
+}
 }
 
 /* This is an example of how to change the appearance of the panel tab as the
@@ -95,10 +125,12 @@
  * and removed from panel tab containers as the mouse enters and exits the tab container.
  */
 .AccordionPanelTabHover {
-	color: #555555;
+	color: #EEEEEE;
+	background-color: #38434A;
 }
 .AccordionPanelOpen .AccordionPanelTabHover {
-	color: #555555;
+	color: color: #EEEEEE;
+	background-color: #38434A;
 }
 
 /* This is an example of how to change the appearance of all the panel tabs when the
@@ -106,14 +138,16 @@
  * whenever the Accordion gains or loses keyboard focus.
  */
 .AccordionFocused .AccordionPanelTab {
-	background-color: #3399FF;
+	background-color: #38434A;
+	color: #EEE;
 }
 
 /* This is an example of how to change the appearance of the panel tab that is
  * currently open when the Accordion has focus.
  */
 .AccordionFocused .AccordionPanelOpen .AccordionPanelTab {
-	background-color: #33CCFF;
+	bbackground-color: #38434A;
+	color: #EEE;
 }
 /* Rules for Printing */
 
