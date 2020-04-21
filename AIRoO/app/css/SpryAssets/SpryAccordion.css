@@ -28,7 +28,7 @@
 	border-right-color: #BBB;
 	border-bottom-color: #000000;
 	text-align: left;
-	text-indent: 11px;
+	text-indent: 12px;
 	white-space: normal;
 	vertical-align: 100%;
 	letter-spacing: normal;
@@ -51,9 +51,9 @@
 	margin: 0px;
 	color: #38434A;
 	padding-top: 4px;
-	padding-right: 0px;
-	padding-bottom: 3px;
-	padding-left: 0px;
+	padding-right: 10px;
+	padding-bottom: 4px;
+	padding-left: 10px;
 }
 
 /* This is the selector for the AccordionPanelTab. This container houses
@@ -73,7 +73,7 @@
  * you can safely remove those properties without affecting the functionality of the widget.
  */
 .AccordionPanelTab {
-	background-color: #38434A;
+	background-color: #000e2e;
 	margin: 0px;
 	cursor: auto;
 	-moz-user-select: none;
@@ -115,7 +115,7 @@
  * from panels as the user clicks on the tabs within the Accordion.
  */
 .AccordionPanelOpen .AccordionPanelTab {
-	background-color: #38434A;
+	background-color: #000e2e;
 	color: #FFF;
 }
 }
@@ -126,11 +126,11 @@
  */
 .AccordionPanelTabHover {
 	color: #EEEEEE;
-	background-color: #38434A;
+	background-color: #000e2e;
 }
 .AccordionPanelOpen .AccordionPanelTabHover {
 	color: color: #EEEEEE;
-	background-color: #38434A;
+	background-color: #000e2e;
 }
 
 /* This is an example of how to change the appearance of all the panel tabs when the
@@ -138,7 +138,7 @@
  * whenever the Accordion gains or loses keyboard focus.
  */
 .AccordionFocused .AccordionPanelTab {
-	background-color: #38434A;
+	background-color: #000e2e;
 	color: #EEE;
 }
 
@@ -146,7 +146,7 @@
  * currently open when the Accordion has focus.
  */
 .AccordionFocused .AccordionPanelOpen .AccordionPanelTab {
-	bbackground-color: #38434A;
+	bbackground-color: #000e2e;
 	color: #EEE;
 }
 /* Rules for Printing */
