@@ -47,6 +47,7 @@ Do the following if you're using your customized build of modernizr (http://www.
 <script src="blockly-master/blockly-master/blocks/procedures.js"></script>
 <script src="blockly-master/blockly-master/blocks/variables_dynamic.js"></script>
 <script src="blockly-master/blockly-master/blocks/loops.js"></script>
+<script src="blockly-master/blockly-master/blocks/logic.js"></script>
 
 
 
@@ -58,6 +59,7 @@ Do the following if you're using your customized build of modernizr (http://www.
 <script src="js/Blockly/listen.js"></script>
 <script src="js/suspend.js"></script>
 <script src="js/Blockly/dolist.js"></script>
+<script src="js/onclick.js"></script>
 
 
 </head>
@@ -89,7 +91,11 @@ Do the following if you're using your customized build of modernizr (http://www.
 
  <xml id= "toolbox" style="display:none;">
  
- 
+ <category name="Logic" colour="210">
+    <block type="controls_if"></block>
+  </category>
+
+    
   <category name="Text" colour="#5CA68D">
     <block type="text_charAt">
       <mutation at="true"></mutation>
@@ -244,9 +250,7 @@ Do the following if you're using your customized build of modernizr (http://www.
     <block type="lists_sort"></block>
   </category>
 
-
-
-
+ 
 
   <sep></sep>
   <sep></sep>
@@ -283,6 +287,17 @@ Do the following if you're using your customized build of modernizr (http://www.
    <category name="Listen" colour="#4b6d95">
   <block type="listen">
   </category>
+  
+  
+ 
+  
+   <category name="On Click" colour="#948846">
+  <block type="onclick">
+  </category>
+  
+  
+  
+  
 </xml>
  
  
