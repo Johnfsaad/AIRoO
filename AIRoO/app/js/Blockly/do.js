@@ -1,9 +1,9 @@
 Blockly.Blocks['do'] = {
   init: function() {
-    this.appendValueInput("NAME")
+    this.appendValueInput("do")
         .setCheck(null)
-        .appendField("do")
-        .appendField(new Blockly.FieldDropdown([["Roll Call","Roll Call"], ["Take Vote","Take Vote"]]), "NAME")
+        .appendField("Do")
+        .appendField(new Blockly.FieldDropdown([["Roll Call","rollcall"], ["Take Vote","takevote"]]), "option")
         .appendField("Options");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -11,4 +11,13 @@ Blockly.Blocks['do'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};// JavaScript Document
+};
+
+
+Blockly.JavaScript['do'] = function(block) {
+  var dropdown_option = block.getFieldValue('option');
+  var value_do = Blockly.JavaScript.valueToCode(block, 'do', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};

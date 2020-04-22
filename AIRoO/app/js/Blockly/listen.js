@@ -1,9 +1,9 @@
 Blockly.Blocks['listen'] = {
   init: function() {
-    this.appendValueInput("NAME")
+    this.appendValueInput("do")
         .setCheck(null)
-        .appendField(" Listen");
-    this.appendStatementInput("Listen")
+        .appendField("Listen");
+    this.appendStatementInput("NAME")
         .setCheck(null)
         .appendField("Do");
     this.setPreviousStatement(true, null);
@@ -12,4 +12,13 @@ Blockly.Blocks['listen'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};// JavaScript Document
+};
+
+
+Blockly.JavaScript['listen'] = function(block) {
+  var value_do = Blockly.JavaScript.valueToCode(block, 'do', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
