@@ -8,6 +8,9 @@ import './index.css';
 import Home from './components/Home/Home';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
+import Conference from './components/Navigation/Conference';
+import Committee from './components/Navigation/Committee';
+import Section from './components/Navigation/Section';
 
 class AppRouter extends React.Component{
 	constructor(props){
@@ -23,6 +26,14 @@ class AppRouter extends React.Component{
 				});
 			}
 		});
+
+		var loadScript = function (src) {
+			var tag = document.createElement('script');
+			tag.async = false;
+			tag.src = src;
+			var body = document.getElementsByTagName('body')[0];
+			body.appendChild(tag);
+		}
 	}
 
 	logOutUser = () => {
@@ -34,6 +45,7 @@ class AppRouter extends React.Component{
 		return(
 			<Router>
 				<div className="app">
+					<img src={require("./images/banner_c.jpg")} />
 					<nav className="main-nav">
 						{!this.state.user && 
 							<div>
@@ -42,8 +54,13 @@ class AppRouter extends React.Component{
 							</div>
 						}
 
-						{this.state.user && 
-							<a href="#!" onClick={this.logOutUser}>Logout</a>
+						{this.state.user &&
+							<div>
+								<Link to="/conference">Conference</Link>
+								<Link to="/committee">Committee</Link>
+								<Link to="/section">Section</Link>
+								<a href="#!" onClick={this.logOutUser}>Logout</a>
+							</div>
 						}
 					</nav>
 
@@ -51,6 +68,9 @@ class AppRouter extends React.Component{
 						<Route path="/" exact render={() => <Home user={this.state.user}/>} />
 						<Route path="/login" exact component={Login} />
 						<Route path="/register" exact component={Register} />
+						<Route path="/conference" exact component={Conference} />
+						<Route path="/committee" exact component={Committee} />
+						<Route path="/section" exact component={Section} />
 						<Route component={NoMatch} />
 					</Switch>
 				</div>

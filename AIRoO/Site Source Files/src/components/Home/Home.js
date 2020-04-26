@@ -36,7 +36,7 @@ class Home extends React.Component{
 	render(){
 		return(
 			<div className="home--container">
-				<h1>Welcome to the chat!</h1>
+				<h1>Welcome to AIRoO!</h1>
 				{this.props.user && 
 					<div className="allow-chat">
 						<form className="send-chat" onSubmit={this.handleSubmit}>

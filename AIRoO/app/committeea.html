@@ -3,42 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title><!doctype html>
-        <!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
-        <!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
-        <!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+        <!--[if lt IE 7]>
+        <html class="ie6 oldie"> <![endif]-->
+        <!--[if IE 7]>
+        <html class="ie7 oldie"> <![endif]-->
+        <!--[if IE 8]>
+        <html class="ie8 oldie"> <![endif]-->
         <!--[if gt IE 8]><!-->
-        
+
         <!--<![endif]-->
-        
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            </title><title>Untitled Document</title>
-            <link href="css/boilerplate.css" rel="stylesheet" type="text/css">
-            <link href="css/Untitled-2.css" rel="stylesheet" type="text/css">
-            <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-            <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-            <!-- 
-            To learn more about the conditional comments around the html tags at the top of the file:
-            paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
-            
-            Do the following if you're using your customized build of modernizr (http://www.modernizr.com/):
-            * insert the link to your js here
-            * remove the link below to the html5shiv
-            * add the "no-js" class to the html tags at the top
-            * you can also remove the link to respond.min.js if you included the MQ Polyfill in your modernizr build 
-            -->
-            <!--[if lt IE 9]>
-            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            <![endif]-->
-            <link rel="stylesheet" href="css/styles_co.css">
-            <link href="css/SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css">
-            <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-            <script src="js/script_co.js"></script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </title>
+    <title>Untitled Document</title>
+    <link href="css/boilerplate.css" rel="stylesheet" type="text/css">
+    <link href="css/Untitled-2.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!--
+    To learn more about the conditional comments around the html tags at the top of the file:
+    paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
+
+    Do the following if you're using your customized build of modernizr (http://www.modernizr.com/):
+    * insert the link to your js here
+    * remove the link below to the html5shiv
+    * add the "no-js" class to the html tags at the top
+    * you can also remove the link to respond.min.js if you included the MQ Polyfill in your modernizr build
+    -->
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/styles_co.css">
+    <link href="css/SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/script_co.js"></script>
 
 
-            <script src="js/respond.min.js"></script>
-            <script src="js/SpryAssets/SpryAccordion.js" type="text/javascript"></script>
-        </head>
+    <script src="js/respond.min.js"></script>
+    <script src="js/SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+</head>
 <body>
 <img src="images/banner_c.jpg">
 <div id="LayoutDiv1">
@@ -91,15 +95,15 @@
     if (navigator.mediaDevices.getUserMedia) {
         console.log('getUserMedia supported.');
 
-        const constraints = { audio: true };
+        const constraints = {audio: true};
         let chunks = [];
 
-        let onSuccess = function(stream) {
+        let onSuccess = function (stream) {
             const mediaRecorder = new MediaRecorder(stream);
 
             visualize(stream);
 
-            record.onclick = function() {
+            record.onclick = function () {
                 mediaRecorder.start();
                 console.log(mediaRecorder.state);
                 console.log("recorder started");
@@ -109,7 +113,7 @@
                 record.disabled = true;
             }
 
-            stop.onclick = function() {
+            stop.onclick = function () {
                 mediaRecorder.stop();
                 console.log(mediaRecorder.state);
                 console.log("recorder stopped");
@@ -121,10 +125,10 @@
                 record.disabled = false;
             }
 
-            mediaRecorder.onstop = function(e) {
+            mediaRecorder.onstop = function (e) {
                 console.log("data available after MediaRecorder.stop() called.");
 
-                const clipName = prompt('Enter a name for your sound clip?','My unnamed clip');
+                const clipName = prompt('Enter a name for your sound clip?', 'My unnamed clip');
 
                 const clipContainer = document.createElement('article');
                 const clipLabel = document.createElement('p');
@@ -136,7 +140,7 @@
                 deleteButton.textContent = 'Delete';
                 deleteButton.className = 'delete';
 
-                if(clipName === null) {
+                if (clipName === null) {
                     clipLabel.textContent = 'My unnamed clip';
                 } else {
                     clipLabel.textContent = clipName;
@@ -148,21 +152,21 @@
                 soundClips.appendChild(clipContainer);
 
                 audio.controls = true;
-                const blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+                const blob = new Blob(chunks, {'type': 'audio/ogg; codecs=opus'});
                 chunks = [];
                 const audioURL = window.URL.createObjectURL(blob);
                 audio.src = audioURL;
                 console.log("recorder stopped");
 
-                deleteButton.onclick = function(e) {
+                deleteButton.onclick = function (e) {
                     let evtTgt = e.target;
                     evtTgt.parentNode.parentNode.removeChild(evtTgt.parentNode);
                 }
 
-                clipLabel.onclick = function() {
+                clipLabel.onclick = function () {
                     const existingName = clipLabel.textContent;
                     const newClipName = prompt('Enter a new name for your sound clip?');
-                    if(newClipName === null) {
+                    if (newClipName === null) {
                         clipLabel.textContent = existingName;
                     } else {
                         clipLabel.textContent = newClipName;
@@ -170,12 +174,12 @@
                 }
             }
 
-            mediaRecorder.ondataavailable = function(e) {
+            mediaRecorder.ondataavailable = function (e) {
                 chunks.push(e.data);
             }
         }
 
-        let onError = function(err) {
+        let onError = function (err) {
             console.log('The following error occured: ' + err);
         }
 
@@ -186,7 +190,7 @@
     }
 
     function visualize(stream) {
-        if(!audioCtx) {
+        if (!audioCtx) {
             audioCtx = new AudioContext();
         }
 
@@ -222,12 +226,12 @@
             let x = 0;
 
 
-            for(let i = 0; i < bufferLength; i++) {
+            for (let i = 0; i < bufferLength; i++) {
 
                 let v = dataArray[i] / 128.0;
-                let y = v * HEIGHT/2;
+                let y = v * HEIGHT / 2;
 
-                if(i === 0) {
+                if (i === 0) {
                     canvasCtx.moveTo(x, y);
                 } else {
                     canvasCtx.lineTo(x, y);
@@ -236,13 +240,13 @@
                 x += sliceWidth;
             }
 
-            canvasCtx.lineTo(canvas.width, canvas.height/2);
+            canvasCtx.lineTo(canvas.width, canvas.height / 2);
             canvasCtx.stroke();
 
         }
     }
 
-    window.onresize = function() {
+    window.onresize = function () {
         canvas.width = mainSection.offsetWidth;
     }
 
@@ -259,11 +263,11 @@
         <div class="row py-sm-5 py-3">
             <div class="col-lg-2 col-md-4 col-sm-6">
                 <ul class="list-agileits">
-                     <li>
-            <a href='index.html' >
-              Home
-            </a>
-          </li>
+                    <li>
+                        <a href='index.html'>
+                            Home
+                        </a>
+                    </li>
                     <li class="my-2">
                         <a href='conference.html'>Conferences</a></li>
                     <li><a href='committee.html'>Committees </a></li>
@@ -275,7 +279,6 @@
 
             <div class="col-lg-2 col-md-4 col-sm-6 mt-sm-5">
                 <ul class="list-agileits">
-
 
 
                 </ul>
@@ -314,13 +317,11 @@
 </footer>
 
 
-
 </body>
 </html>
 
 
 <body>
-
 
 
 </body>
