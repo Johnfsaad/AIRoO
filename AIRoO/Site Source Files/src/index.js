@@ -39,7 +39,7 @@ class AppRouter extends React.Component{
 	logOutUser = () => {
 		firebase.auth().signOut()
 			.then(window.location = "/");
-	}
+	};
 
 	render(){
 		return(
