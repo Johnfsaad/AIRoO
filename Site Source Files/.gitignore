@@ -63,5 +63,10 @@ node_modules/
 
 # dotenv environment variables file
 .env
-/build/
+
+build
+
+package.json
+package-lock.json
+/.idea/
 /src/firebase.js
