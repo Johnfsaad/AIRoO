@@ -2,6 +2,13 @@ import React from 'react';
 import firebase from '../../firebase';
 import {Link} from 'react-router-dom';
 
+import '../../css/boilerplate.css';
+import '../../css/Untitled-2.css';
+import '../../css/bootstrap.css';
+import '../../css/style.css';
+import '../../css/styles_co.css'
+import '../../css/SpryAccordion.css';
+
 class Committee extends React.Component{
     constructor(props){
         super(props);

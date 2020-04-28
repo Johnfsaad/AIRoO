@@ -4,6 +4,10 @@ import { BrowserRouter as Router, Route, Link, Switch, withRouter } from 'react-
 import firebase, {auth, provider} from './firebase'
 
 import './index.css';
+import './css/styles_co.css';
+import './css/image.css';
+import './css/bootstrap.css';
+import './css/style.css';
 
 import Home from './components/Home/HomePrototype';
 import Login from './components/Auth/Login';
@@ -61,6 +65,7 @@ class AppRouter extends React.Component{
 					<nav className="main-nav">
 						{!this.state.user && 
 							<div>
+								<Link to="/">Home</Link>
 								<Link to="/login">Login</Link>
 								<Link to="/register">Register</Link>
 							</div>
@@ -68,6 +73,7 @@ class AppRouter extends React.Component{
 
 						{this.state.user &&
 							<div>
+								<Link to="/">Home</Link>
 								<Link to="/conference">Conference</Link>
 								<Link to="/committee">Committee</Link>
 								<Link to="/section">Section</Link>
