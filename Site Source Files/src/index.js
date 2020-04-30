@@ -22,6 +22,7 @@ class AppRouter extends React.Component{
 		this.state = {user: null}
 		this.logOutUser = this.logOutUser.bind(this);
 	}
+
 	componentDidMount(){
 		auth.onAuthStateChanged(user => {
 			if(user){

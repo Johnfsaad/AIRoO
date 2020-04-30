@@ -1,5 +1,3 @@
-
-
 body {
 	margin: 0;
 	font-family: 'Ubuntu', sans-serif;
@@ -814,4 +812,7 @@ h2 a.navbar-brand i {
 	color: #000;
 }
 
+#steps {
+	margin-left: 20px;
+}
 /* //blog */

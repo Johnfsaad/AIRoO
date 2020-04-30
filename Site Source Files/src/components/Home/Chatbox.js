@@ -37,7 +37,7 @@ class Chatbox extends React.Component{
 						const postDate = new Date(chat.date);
 						return(
 							<li key={chat.id}>
-								<em>{postDate.getDate() + '/' + (postDate.getMonth()+1)}</em>
+								<em>{(postDate.getMonth()+1) + '/' + postDate.getDate()}</em>
 								<strong>{chat.user}:</strong> 
 								{chat.message}
 							</li>

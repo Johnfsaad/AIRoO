@@ -100,7 +100,7 @@ class Home extends React.Component{
                                     <span className="process-circle"></span>
                                     <h4 className="sec-title1">Step 1</h4>
                                 </div>
-                                <p className="mt-md-5 mb-3 mt-3">Register on the home page</p>
+                                <p id='steps' className="mt-md-5 mb-3 mt-3">Register on the home page</p>
                                 <div className="process-direction"></div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@ class Home extends React.Component{
                                     <span className="process-circle"></span>
                                     <h4 className="sec-title1">Step 3</h4>
                                 </div>
-                                <p className="mt-md-5 mb-3 mt-3">Join a session</p>
+                                <p id='steps' className="mt-md-5 mb-3 mt-3">Join a session</p>
                                 <div className="process-direction2"></div>
                             </div>
                         </div>
