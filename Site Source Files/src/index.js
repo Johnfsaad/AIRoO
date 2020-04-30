@@ -33,16 +33,17 @@ class AppRouter extends React.Component{
 
 		var loadScript = function (src) {
 			var tag = document.createElement('script');
+			tag.type =  'text/jsx';
 			tag.async = false;
 			tag.src = src;
 			var body = document.getElementsByTagName('body')[0];
 			body.appendChild(tag);
 		}
 
-		loadScript("./js/b_script.js");
-		loadScript("./js/bootstrap.js");
-		loadScript("./js/easing.js");
 		loadScript("./js/jquery-2.2.3.min.js");
+		loadScript("./js/bootstrap.js");
+		loadScript("./js/b_script.js");
+		loadScript("./js/easing.js");
 		loadScript("./js/jQuery_menu.js");
 		loadScript("./js/move-top.js");
 		loadScript("./js/respond.min.js");
