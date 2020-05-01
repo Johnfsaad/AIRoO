@@ -13,9 +13,7 @@ import Chatbox from "../Home/Chatbox";
 class Section extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            chats: []
-        }
+        this.state = {sections: [], committees: [], chats: [], name: ''}
     }
 
     handleChange = e => {
@@ -34,12 +32,13 @@ class Section extends React.Component {
             }
 
             sectionRef.push(chat);
-            this.setState({name: ''});
+            this.state.name = '';
         }
     }
 
     componentDidMount() {
         const sectionRef = firebase.database().ref('Users/' + this.props.user.displayName + '/Section');
+        this.setState({})
         sectionRef.on('value', snapshot => {
             const getSections = snapshot.val();
             let sectionList = [];
@@ -54,7 +53,10 @@ class Section extends React.Component {
                 }
             }
             const sections = sectionList.reverse();
-            this.setState({sections});
+            if (!sections.length)
+                this.state.sections[1] = <p>Sorry, the list is empty.</p>;
+            else
+                this.state.sections[1] = sections;
         });
         const committeeRef = firebase.database().ref('Users/' + this.props.user.displayName + '/Committee');
         committeeRef.on('value', snapshot => {
@@ -71,7 +73,7 @@ class Section extends React.Component {
                 }
             }
             const committees = committeeList.reverse();
-            this.setState({committees});
+            this.state.committees[1] = committees;
         });
     }
 
@@ -79,7 +81,7 @@ class Section extends React.Component {
         return (
             <div className="section-container">
                 <ul className='chat-list'>
-                    {this.state.sections.map(section => {
+                    {this.state.sections[1].map(section => {
                         return (
                             <div>
                                 <tr>
@@ -95,12 +97,12 @@ class Section extends React.Component {
                             </div>
                         );
                     })}
-                    {this.state.committees.map(committee => {
+                    {this.state.committees[1].map(committee => {
                         return (
                             <form className="new-section" onSubmit={this.handleSubmit}>
                                 <label>Choose a committee:</label>
                                 <select id="committees">
-                                    <option value={this.state.committee}></option>
+                                    <option value={committee.name}></option>
                                 </select>
                                 <input type="text" id="name" value={this.state.name}
                                        onChange={this.handleChange} placeholder='Enter a name...'/>
