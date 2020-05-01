@@ -13,7 +13,12 @@ import Chatbox from "../Home/Chatbox";
 class Section extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {sections: [], committees: [], chats: [], name: ''}
+        this.state = {
+            sections: [{id: 1, name: 1, availability: 1, time: 1}],
+            committees: [{id: 1, name: 1, availability: 1, time: 1}],
+            chats: [],
+            name: ''
+        }
     }
 
     handleChange = e => {
@@ -23,7 +28,7 @@ class Section extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         if (this.state.name !== '') {
-            const sectionRef = firebase.database().ref('Users/' + this.props.user.displayName + '/Section');
+            const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser + '/Section');
             const chat = {
                 committee: this.state.committee,
                 name: this.state.name,
@@ -37,13 +42,12 @@ class Section extends React.Component {
     }
 
     componentDidMount() {
-        const sectionRef = firebase.database().ref('Users/' + this.props.user.displayName + '/Section');
-        this.setState({})
+        const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser + '/Section');
         sectionRef.on('value', snapshot => {
             const getSections = snapshot.val();
             let sectionList = [];
             for (let section in getSections) {
-                if (getSections[section].message !== '') {
+                if (getSections[section].name !== '') {
                     sectionList.push({
                         id: section,
                         name: getSections[section].name,
@@ -52,18 +56,14 @@ class Section extends React.Component {
                     });
                 }
             }
-            const sections = sectionList.reverse();
-            if (!sections.length)
-                this.state.sections[1] = <p>Sorry, the list is empty.</p>;
-            else
-                this.state.sections[1] = sections;
+            this.setState({sections: this.state.sections.concat(sectionList.reverse)});
         });
-        const committeeRef = firebase.database().ref('Users/' + this.props.user.displayName + '/Committee');
+        const committeeRef = firebase.database().ref('Users/' + firebase.auth().currentUser + '/Committee');
         committeeRef.on('value', snapshot => {
             const getCommittees = snapshot.val();
             let committeeList = [];
             for (let committee in getCommittees) {
-                if (getCommittees[committee].message !== '') {
+                if (getCommittees[committee].name !== '') {
                     committeeList.push({
                         id: committee,
                         name: getCommittees[committee].name,
@@ -72,8 +72,7 @@ class Section extends React.Component {
                     });
                 }
             }
-            const committees = committeeList.reverse();
-            this.state.committees[1] = committees;
+            this.setState({committees: this.state.committees.concat(committeeList.reverse)});
         });
     }
 
@@ -81,35 +80,35 @@ class Section extends React.Component {
         return (
             <div className="section-container">
                 <ul className='chat-list'>
-                    {this.state.sections[1].map(section => {
-                        return (
-                            <div>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Available</td>
-                                    <td>Uptime</td>
-                                </tr>
+                    <div>
+                        <tr>
+                            <td>Name</td>
+                            <td>Available</td>
+                            <td>Uptime</td>
+                        </tr>
+                        {this.state.sections.map(section => {
+                            return (
                                 <tr key={section.id}>
                                     <td>{section.name}</td>
                                     <td>{section.availability}</td>
                                     <td>{section.time}</td>
                                 </tr>
-                            </div>
-                        );
-                    })}
-                    {this.state.committees[1].map(committee => {
-                        return (
-                            <form className="new-section" onSubmit={this.handleSubmit}>
-                                <label>Choose a committee:</label>
+                            );
+                        })}
+                    </div>
+                    <form className="new-section" onSubmit={this.handleSubmit}>
+                        <label>Choose a committee:</label>
+                        {this.state.committees.map(committee => {
+                            return (
                                 <select id="committees">
                                     <option value={committee.name}></option>
                                 </select>
-                                <input type="text" id="name" value={this.state.name}
-                                       onChange={this.handleChange} placeholder='Enter a name...'/>
-                                <input type="submit"></input>
-                            </form>
-                        );
-                    })}
+                            );
+                        })}
+                        <input type="text" id="name" value={this.state.name}
+                               onChange={this.handleChange} placeholder='Enter a name...'/>
+                        <input type="submit"></input>
+                    </form>
                 </ul>
             </div>
         );
