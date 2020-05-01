@@ -28,7 +28,7 @@ class Section extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         if (this.state.name !== '') {
-            const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser + '/Section');
+            const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Section');
             const chat = {
                 committee: this.state.committee,
                 name: this.state.name,
@@ -42,7 +42,7 @@ class Section extends React.Component {
     }
 
     componentDidMount() {
-        const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser + '/Section');
+        const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Section');
         sectionRef.on('value', snapshot => {
             const getSections = snapshot.val();
             let sectionList = [];
@@ -58,7 +58,7 @@ class Section extends React.Component {
             }
             this.setState({sections: this.state.sections.concat(sectionList.reverse)});
         });
-        const committeeRef = firebase.database().ref('Users/' + firebase.auth().currentUser + '/Committee');
+        const committeeRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Committee');
         committeeRef.on('value', snapshot => {
             const getCommittees = snapshot.val();
             let committeeList = [];
