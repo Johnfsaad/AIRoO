@@ -2,25 +2,45 @@ Blockly.Blocks['printwithtime'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Print")
-        .appendField(new Blockly.FieldTextInput("\" \""), "NAME")
-        .appendField(" For ")
-        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["4","4"], ["5","5"], ["20","20"], ["30","30"], ["40","40"], ["50","50"]]), "option")
-        .appendField(new Blockly.FieldDropdown([["Minutes(s)","Minutes"], ["Second(s)","Second"], ["option","OPTIONNAME"]]), "option2");
+        .appendField(new Blockly.FieldTextInput("\" \""), "string")
+        .appendField(" For 10 Secounds ");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
  this.setTooltip("");
  this.setHelpUrl("");
   }
-};
+};           
 
+
+
+
+function printTo(entry){
+	
+document.getElementById("output").innerHTML=entry;
+	}
 
 
 Blockly.JavaScript['printwithtime'] = function(block) {
-  var text_name = block.getFieldValue('NAME');
-  var dropdown_option = block.getFieldValue('option');
-  var dropdown_option2 = block.getFieldValue('option2');
-  // TODO: Assemble JavaScript into code variable.
+  var text_name = block.getFieldValue('string');
+ 
+
   var code = '...;\n';
-  return code;
+  printTo(text_name);
+  
+  
+  var seconds_left = 10;
+var interval = setInterval(function() {
+    document.getElementById('output').innerHTML =  --seconds_left;
+
+    if (seconds_left <= 0)
+    {
+        document.getElementById('output').innerHTML = 'Time Out';
+        clearInterval(interval);
+    }
+}, 1000);
+  
+  
+  
 };
+
