@@ -85,25 +85,6 @@ Blockly.Blocks['printwithtime'] = {
     }
 };
 
-function printTo(entry) {
-    document.getElementById("output").innerHTML = entry;
-}
-
-Blockly.JavaScript['printwithtime'] = function (block) {
-    var text_name = block.getFieldValue('string');
-    var code = '...;\n';
-    printTo(text_name);
-    var seconds_left = 10;
-    var interval = setInterval(function () {
-        document.getElementById('output').innerHTML = --seconds_left;
-
-        if (seconds_left <= 0) {
-            document.getElementById('output').innerHTML = 'Time Out';
-            clearInterval(interval);
-        }
-    }, 1000);
-};
-
 Blockly.Blocks['print'] = {
     init: function () {
         this.appendDummyInput()
@@ -115,21 +96,6 @@ Blockly.Blocks['print'] = {
         this.setTooltip("");
         this.setHelpUrl("");
     }
-};
-
-function printTo(entry) {
-
-    document.getElementById("output").innerHTML = entry;
-}
-
-Blockly.JavaScript['print'] = function (block) {
-    var text_name = block.getFieldValue('NAME');
-    // TODO: Assemble JavaScript into code variable.
-
-    var code = '...;\n';
-    printTo(text_name);
-
-
 };
 
 Blockly.Blocks['listen'] = {
@@ -151,6 +117,44 @@ Blockly.Blocks['listen'] = {
 Blockly.JavaScript['listen'] = function (block) {
     var value_do = Blockly.JavaScript.valueToCode(block, 'do', Blockly.JavaScript.ORDER_ATOMIC);
     var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '...;\n';
+    return code;
+};
+
+Blockly.Blocks['suspend'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField("Suspend")
+            .appendField(new Blockly.FieldVariable("Chose Variable"), "NAME");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(20);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.JavaScript['suspend'] = function (block) {
+    var variable_name = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('NAME'), Blockly.Variables.NAME_TYPE);
+    // TODO: Assemble JavaScript into code variable.
+    var code = '...;\n';
+    return code;
+};
+
+Blockly.Blocks['recording'] = {
+    init: function () {
+        this.appendDummyInput()
+            .appendField(" Start Recording");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(20);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+
+Blockly.JavaScript['recording'] = function (block) {
     // TODO: Assemble JavaScript into code variable.
     var code = '...;\n';
     return code;
