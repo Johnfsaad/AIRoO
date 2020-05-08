@@ -30,30 +30,32 @@ class Session extends React.Component {
             }
             chatRef.push(chat);
 
-            function print() {
-                if (message.indexOf("Motion Print ") == 0) {
-                    const print = {
-                        message: message.substring(message.indexOf("Motion Print ") + 13),
-                        user: username,
-                        timestamp: new Date().getTime()
+            if (message.indexOf("Motion ") == 0) {
+                function print() {
+                    if (message.indexOf("Motion Print ") == 0) {
+                        const print = {
+                            message: message.substring(message.indexOf("Motion Print ") + 13),
+                            user: username,
+                            timestamp: new Date().getTime()
+                        }
+                        chatRef.push(print);
                     }
-                    chatRef.push(print);
                 }
-            }
 
-            function runCode(code) {
-                try {
-                    print();
-                } catch (e) {
-                    console.log(e);
+                function runCode(code) {
+                    try {
+                        print();
+                    } catch (e) {
+                        console.log(e);
+                    }
                 }
-            }
 
-            const codeStore = firebase.database().ref('Code');
-            codeStore.on('value', snapshot => {
-                const code = snapshot.val();
-                runCode(code);
-            });
+                const codeStore = firebase.database().ref('Code');
+                codeStore.on('value', snapshot => {
+                    const code = snapshot.val();
+                    runCode(code);
+                });
+            }
 
             this.setState({message: ''});
         }
