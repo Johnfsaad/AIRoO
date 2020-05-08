@@ -14,10 +14,8 @@ class Section extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sections: [{id: 1, name: 1, availability: 1, time: 1}],
-            committees: [{id: 1, name: 1, availability: 1, time: 1}],
-            chats: [],
-            name: ''
+            name: '',
+            sections: {}
         }
     }
 
@@ -30,7 +28,6 @@ class Section extends React.Component {
         if (this.state.name !== '') {
             const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Section');
             const chat = {
-                committee: this.state.committee,
                 name: this.state.name,
                 availability: 'null',
                 time: 'null'
@@ -49,7 +46,6 @@ class Section extends React.Component {
             for (let section in getSections) {
                 if (getSections[section].name !== '') {
                     sectionList.push({
-                        id: section,
                         name: getSections[section].name,
                         availability: getSections[section].availability,
                         time: getSections[section].time
@@ -58,25 +54,18 @@ class Section extends React.Component {
             }
             this.setState({sections: this.state.sections.concat(sectionList.reverse)});
         });
-        const committeeRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Committee');
-        committeeRef.on('value', snapshot => {
-            const getCommittees = snapshot.val();
-            let committeeList = [];
-            for (let committee in getCommittees) {
-                if (getCommittees[committee].name !== '') {
-                    committeeList.push({
-                        id: committee,
-                        name: getCommittees[committee].name,
-                        availability: getCommittees[committee].availability,
-                        time: getCommittees[committee].time
-                    });
-                }
-            }
-            this.setState({committees: this.state.committees.concat(committeeList.reverse)});
-        });
     }
 
     render() {
+        var section = this.state.sections.map(section => {
+            return (
+                <tr key={section.id}>
+                    <td>{section.name}</td>
+                    <td>{section.availability}</td>
+                    <td>{section.time}</td>
+                </tr>
+            );
+        });
         return (
             <div className="section-container">
                 <ul className='chat-list'>
@@ -86,28 +75,10 @@ class Section extends React.Component {
                             <td>Available</td>
                             <td>Uptime</td>
                         </tr>
-                        {this.state.sections.map(section => {
-                            return (
-                                <tr key={section.id}>
-                                    <td>{section.name}</td>
-                                    <td>{section.availability}</td>
-                                    <td>{section.time}</td>
-                                </tr>
-                            );
-                        })}
+                        {section.length ? section : <></>}
                     </div>
-                    <form className="new-section" onSubmit={this.handleSubmit}>
-                        <label>Choose a committee:</label>
-                        {this.state.committees.map(committee => {
-                            return (
-                                <select id="committees">
-                                    <option value={committee.name}></option>
-                                </select>
-                            );
-                        })}
-                        <input type="text" id="name" value={this.state.name}
-                               onChange={this.handleChange} placeholder='Enter a name...'/>
-                        <input type="submit"></input>
+                    <form className="create-section" onSubmit={this.handleSubmit}>
+                        <input type="text" name="sectionName" id="message" value={this.state.name} onChange={this.handleChange} placeholder='Leave a message...' />
                     </form>
                 </ul>
             </div>
