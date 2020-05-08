@@ -2,7 +2,7 @@ Blockly.Blocks['print'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Print")
-        .appendField(new Blockly.FieldTextInput("\" \""), "string");
+        .appendField(new Blockly.FieldTextInput("\" \""), "NAME");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(20);
@@ -16,9 +16,13 @@ document.getElementById("output").innerHTML=entry;
 	}
 
 
+
 Blockly.JavaScript['print'] = function(block) {
-  var text_name = block.getFieldValue('string');
+  var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+ 
+   var code = '...;\n';
   printTo(text_name);
+  
+  
 };

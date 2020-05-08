@@ -11,9 +11,15 @@ Blockly.Blocks['say'] = {
   }
 };
 
+function printTo(entry){
+	
+document.getElementById("output").innerHTML=entry;
+	}
+
 Blockly.JavaScript['say'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = '...;\n';
-  return code;
+  
+  printTo(text_name);
 };

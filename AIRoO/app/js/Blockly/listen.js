@@ -1,4 +1,4 @@
-Blockly.Blocks[''] = {
+Blockly.Blocks['listen'] = {
   init: function() {
     this.appendValueInput("do")
         .setCheck(null)
