@@ -85,8 +85,8 @@ class AppRouter extends React.Component{
 						<Route path="/" exact render={() => <Home user={this.state.user}/>} />
 						<Route path="/login" exact component={Login} />
 						<Route path="/register" exact component={Register} />
-						<Route path="/section" component={() => <Section user={this.state.user}/>}/>
-						<Route path="/session" exact component={Session} />
+						<Route path="/section" component={() => <Section user={this.state.user}/>} />
+						<Route path="/session" component={(props) => <Session {...props} user={this.state.user}/>} />
 						<Route component={NoMatch} />
 					</Switch>
 				</div>

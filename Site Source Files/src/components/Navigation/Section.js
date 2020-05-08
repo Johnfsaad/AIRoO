@@ -26,7 +26,7 @@ class Section extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         if (this.state.name !== '') {
-            const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Section');
+            const sectionRef = firebase.database().ref('Section');
             const section = {
                 name: this.state.name,
                 availability: 'N/A',
@@ -39,22 +39,19 @@ class Section extends React.Component {
     }
 
     componentDidMount() {
-        const sectionRef = firebase.database().ref('Users');///' + firebase.auth().currentUser.displayName + '/Section');
+        const sectionRef = firebase.database().ref('Section');///' + firebase.auth().currentUser.displayName + '/Section');
         sectionRef.on('value', snapshot => {
-            const getUsers = snapshot.val();
+            const getSections = snapshot.val();
             let sectionList = [];
 
-            for (let user in getUsers) {
-                for (let section in getUsers[user]) {
-                    for (let sectionID in getUsers[user][section]) {
-                        if (getUsers[user][section][sectionID].name !== '') {
-                            sectionList.push({
-                                name: getUsers[user][section][sectionID].name,
-                                availability: getUsers[user][section][sectionID].availability,
-                                time: getUsers[user][section][sectionID].time
-                            });
-                        }
-                    }
+            for (let section in getSections) {
+                if (getSections[section].name !== '') {
+                    sectionList.push({
+                        id: section,
+                        name: getSections[section].name,
+                        availability: getSections[section].availability,
+                        time: getSections[section].time
+                    });
                 }
             }
 
@@ -69,10 +66,11 @@ class Section extends React.Component {
                     <td>{section.name}</td>
                     <td>{section.availability}</td>
                     <td>{section.time}</td>
+                    {console.log(section.id)}
                     <Link
                         to={{
                             pathname: "/session",
-                            data: section.name
+                            state: section.id
                         }}>
                         Join Session
                     </Link>

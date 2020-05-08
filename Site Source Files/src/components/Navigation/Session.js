@@ -20,7 +20,7 @@ class Session extends React.Component{
     handleSubmit = e => {
         e.preventDefault();
         if(this.state.message !== ''){
-            const chatRef = firebase.database().ref('general');
+            const chatRef = firebase.database().ref('Section/' + this.props.location.state + '/Chat');
             const chat = {
                 message: this.state.message,
                 user: this.props.user.displayName,
@@ -35,14 +35,13 @@ class Session extends React.Component{
     render(){
         return(
             <div className="session--container">
-                <h1>Welcome to AIRoO!</h1>
                 {this.props.user &&
                 <div className="allow-chat">
                     <form className="send-chat" onSubmit={this.handleSubmit}>
                         <input type="text" name="message" id="message" value={this.state.message} onChange={this.handleChange} placeholder='Leave a message...' />
                     </form>
 
-                    <Chatbox />
+                    <Chatbox section={this.props.location.state}/>
                 </div>
                 }
             </div>
