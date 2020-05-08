@@ -10,7 +10,7 @@ class Chatbox extends React.Component{
 	}
 
 	componentDidMount(){
-		const chatRef = firebase.database().ref('general');
+		const chatRef = firebase.database().ref('Section/' + this.props.section + '/Chat');
 		chatRef.on('value', snapshot => {
 			const getChats = snapshot.val();
 			let ascChats = [];

@@ -1,6 +1,6 @@
 import React from 'react';
-import firebase from '../../firebase';
-import {Link} from 'react-router-dom';
+import firebase, {auth, provider} from '../../firebase';
+import {BrowserRouter as Router, Route, Link, Switch, withRouter, Redirect} from 'react-router-dom';
 
 import '../../css/boilerplate.css';
 import '../../css/Untitled-2.css';
@@ -8,14 +8,14 @@ import '../../css/bootstrap.css';
 import '../../css/style.css';
 import '../../css/styles_co.css'
 import '../../css/SpryAccordion.css';
-import Chatbox from "../Home/Chatbox";
+import '../Home/Home.css';
 
 class Section extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             name: '',
-            sections: {}
+            sections: []
         }
     }
 
@@ -26,33 +26,36 @@ class Section extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         if (this.state.name !== '') {
-            const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Section');
-            const chat = {
+            const sectionRef = firebase.database().ref('Section');
+            const section = {
                 name: this.state.name,
-                availability: 'null',
-                time: 'null'
+                availability: 'N/A',
+                time: 'N/A'
             }
 
-            sectionRef.push(chat);
-            this.state.name = '';
+            sectionRef.push(section);
+            this.setState({name: ''});
         }
     }
 
     componentDidMount() {
-        const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Section');
+        const sectionRef = firebase.database().ref('Section');///' + firebase.auth().currentUser.displayName + '/Section');
         sectionRef.on('value', snapshot => {
             const getSections = snapshot.val();
             let sectionList = [];
+
             for (let section in getSections) {
                 if (getSections[section].name !== '') {
                     sectionList.push({
+                        id: section,
                         name: getSections[section].name,
                         availability: getSections[section].availability,
                         time: getSections[section].time
                     });
                 }
             }
-            this.setState({sections: this.state.sections.concat(sectionList.reverse)});
+
+            this.setState({sections: sectionList});
         });
     }
 
@@ -63,24 +66,39 @@ class Section extends React.Component {
                     <td>{section.name}</td>
                     <td>{section.availability}</td>
                     <td>{section.time}</td>
+                    {console.log(section.id)}
+                    <Link
+                        to={{
+                            pathname: "/session",
+                            state: section.id
+                        }}>
+                        Join Session
+                    </Link>
                 </tr>
             );
         });
         return (
             <div className="section-container">
-                <ul className='chat-list'>
-                    <div>
-                        <tr>
-                            <td>Name</td>
-                            <td>Available</td>
-                            <td>Uptime</td>
-                        </tr>
-                        {section.length ? section : <></>}
-                    </div>
-                    <form className="create-section" onSubmit={this.handleSubmit}>
-                        <input type="text" name="sectionName" id="message" value={this.state.name} onChange={this.handleChange} placeholder='Leave a message...' />
-                    </form>
-                </ul>
+                {this.props.user ?
+                    <ul className='section-list'>
+                        <div>
+                            <tr>
+                                <td>Name</td>
+                                <td>Available</td>
+                                <td>Uptime</td>
+                            </tr>
+                            {section}
+                        </div>
+                        <form className="create-section" onSubmit={this.handleSubmit}>
+                            <input type="text" name="name" id="name" value={this.state.name}
+                                   onChange={this.handleChange}
+                                   placeholder='New section name'/>
+                        </form>
+                    </ul>
+                    : <Route
+                        render={props => <Redirect to={{pathname: '/'}}/>}
+                    />
+                }
             </div>
         );
     }

@@ -1,13 +1,10 @@
 import React from 'react';
 import firebase from '../../firebase';
 import {Link} from 'react-router-dom';
-
 import './Home.css';
 
-import Chatbox from './Chatbox';
-
-class Home extends React.Component{
-    constructor(props){
+class Home extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             message: ''
@@ -20,7 +17,7 @@ class Home extends React.Component{
 
     handleSubmit = e => {
         e.preventDefault();
-        if(this.state.message !== ''){
+        if (this.state.message !== '') {
             const chatRef = firebase.database().ref('general');
             const chat = {
                 message: this.state.message,
@@ -33,143 +30,155 @@ class Home extends React.Component{
         }
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="App">
                 <div className="home--container">
-                    <h1>Welcome to AIRoO!</h1>
-                    {this.props.user &&
-                    <div className="allow-chat">
-                        <form className="send-chat" onSubmit={this.handleSubmit}>
-                            <input type="text" name="message" id="message" value={this.state.message} onChange={this.handleChange} placeholder='Leave a message...' />
-                        </form>
-
-                        <Chatbox />
-                    </div>
-                    }
-                    {!this.props.user &&
-                    <div className="disallow-chat">
-                        <p><Link to="/login">Login</Link> or <Link to="/register">Register</Link> to start chatting!</p>
-                    </div>
-                    }
-                </div>
-                <div className="agileits-services py-5" id="services">
-                    <div className="container py-sm-5">
-                        <div className="title-wthree text-center">
-                            <h3 className="agile-title   text-white">our services</h3>
-                        </div>
-                        <div className="agileits-services-grids">
-                            <p>Any structured government, organization, or entity requires a form of procedure and order; a set of
-                                rules that maintain the flow of any official session of the entity. A commonly used Rules of Order are
-                                Robert’s Rules of Order and Modern Rules of Order; some other entities will create their
-                                procedures and rules. Any Rules of Order allow the formal meetings of any entity to run smoothly,
-                                maintain fairness, and maintain the flow of their meetings. Typically, procedures are used to maintain
-                                the flow of a committee or meeting of an entity. In a meeting, there are two main actors, the chair,
-                                the person maintaining the order of the session and overseeing its flow, and the participants. At
-                                times, the chair does mistakes, forgets the proper order, or becomes biased. The goal of AI’s Rules of
-                                Order (AiRoO) is to substitute the role of the chair. AIRoO will be a web app that allows the chair to
-                                build all the possible rules using structured blocks, then allow the chair to have AiRoO maintain the
-                                order and the flow of a meeting using those rules designed into blocks earlier by the chair. AiRoO
-                                will consist of a back- end where the chair can manipulate those blocks and rules. AIRoO will also
-                                allow participants of that meeting to be authenticated and confirmed by the chair. Once in a meeting
-                                and the meeting begins, AiRoO will take over the meeting using the rules it was given by the chair to
-                                maintain the flow and order. It will maintain the flow of the meeting by saying things the chair would
-                                have said and waiting for verbal responses or typed responses from the participants via the web-app.
-                                AiRoO will utilize IBM’s Watson to allow for Speech-to-Text and Text-To-Speech processing. It is also
-                                possible AIRoO might utilize Watson’s language processing capability to improve its understanding of
-                                some terminology and allow for error-correcting when the participants do such errors. The goal is that
-                                when AIRoO is running that there should be no need for the chair to exist as AIRoO already knows all
-                                the possible rules and can make sure they are followed properly when voting, taking roll call, or even
-                                just debating or discussing any matter.</p>
-                        </div>
-                    </div>
-                </div>
-                <section className="wthree-row py-lg-5" id="process">
-                    <div className="container py-5">
-                        <div className="title-wthree text-center py-lg-5">
-                            <h3 className="agile-title">How to use</h3>
-                            <span></span>
-                        </div>
-                        <div className="row abbot-main py-lg-5 py-4 mb-sm-5">
-                            <div className="col-lg-4 abbot-right">
-                                <img src={require("../../images/p1.png")} className="img-fluid rounded-circle" alt=""/>
+                    <div className="agileits-services py-5" id="services">
+                        <div className="container py-sm-5">
+                            <div className="title-wthree text-center">
+                                <h3 className="agile-title   text-white">our services</h3>
                             </div>
-                            <div className="offset-lg-2"></div>
-                            <div className="col-lg-6 about-text-grid position-relative mt-lg-0 mt-5">
-                                <div className="d-flex">
-                                    <span className="process-circle"></span>
-                                    <h4 className="sec-title1">Step 1</h4>
+                            <div className="agileits-services-grids">
+                                <p>Any structured government, organization, or entity requires a form of procedure and
+                                    order; a set of
+                                    rules that maintain the flow of any official session of the entity. A commonly used
+                                    Rules of Order are
+                                    Robert’s Rules of Order and Modern Rules of Order; some other entities will create
+                                    their
+                                    procedures and rules. Any Rules of Order allow the formal meetings of any entity to
+                                    run smoothly,
+                                    maintain fairness, and maintain the flow of their meetings. Typically, procedures
+                                    are used to maintain
+                                    the flow of a committee or meeting of an entity. In a meeting, there are two main
+                                    actors, the chair,
+                                    the person maintaining the order of the session and overseeing its flow, and the
+                                    participants. At
+                                    times, the chair does mistakes, forgets the proper order, or becomes biased. The
+                                    goal of AI’s Rules of
+                                    Order (AiRoO) is to substitute the role of the chair. AIRoO will be a web app that
+                                    allows the chair to
+                                    build all the possible rules using structured blocks, then allow the chair to have
+                                    AiRoO maintain the
+                                    order and the flow of a meeting using those rules designed into blocks earlier by
+                                    the chair. AiRoO
+                                    will consist of a back- end where the chair can manipulate those blocks and rules.
+                                    AIRoO will also
+                                    allow participants of that meeting to be authenticated and confirmed by the chair.
+                                    Once in a meeting
+                                    and the meeting begins, AiRoO will take over the meeting using the rules it was
+                                    given by the chair to
+                                    maintain the flow and order. It will maintain the flow of the meeting by saying
+                                    things the chair would
+                                    have said and waiting for verbal responses or typed responses from the participants
+                                    via the web-app.
+                                    AiRoO will utilize IBM’s Watson to allow for Speech-to-Text and Text-To-Speech
+                                    processing. It is also
+                                    possible AIRoO might utilize Watson’s language processing capability to improve its
+                                    understanding of
+                                    some terminology and allow for error-correcting when the participants do such
+                                    errors. The goal is that
+                                    when AIRoO is running that there should be no need for the chair to exist as AIRoO
+                                    already knows all
+                                    the possible rules and can make sure they are followed properly when voting, taking
+                                    roll call, or even
+                                    just debating or discussing any matter.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <section className="wthree-row py-lg-5" id="process">
+                        <div className="container py-5">
+                            <div className="title-wthree text-center py-lg-5">
+                                <h3 className="agile-title">How to use</h3>
+                                <span></span>
+                            </div>
+                            <div className="row abbot-main py-lg-5 py-4 mb-sm-5">
+                                <div className="col-lg-4 abbot-right">
+                                    <img src={require("../../images/p1.png")} className="img-fluid rounded-circle"
+                                         alt=""/>
                                 </div>
-                                <p id='steps' className="mt-md-5 mb-3 mt-3">Register on the home page</p>
-                                <div className="process-direction"></div>
-                            </div>
-                        </div>
-                        <div className="row abbot-main py-lg-5 py-4 my-md-5">
-                            <div className="col-lg-6 about-text-grid">
-                                <div className="d-flex">
-                                    <h4 className="sec-title1 flow-odd">Step 2</h4>
-                                    <span className="process-circle"></span>
-                                </div>
-                                <ul className="list-group mt-md-3 my-3">
-                                    <li className="list-group-item border-0">
-                                        <i className="fas fa-check mr-3 mt-lg-0 mt-3"></i>Join or create a conference
-                                    </li>
-                                    <li className="list-group-item border-0">
-                                        <i className="fas fa-check mr-3 mt-lg-0 mt-3"></i>Repeat this for committee and section
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="col-lg-4 abbot-right">
-                                <img src={require("../../images/p2.png")} className="img-fluid rounded-circle" alt=""/>
-                            </div>
-                        </div>
-                        <div className="row abbot-main py-lg-5 py-4 mb-sm-5">
-                            <div className="col-lg-4 abbot-right">
-                                <img src={require("../../images/p3.png")} className="img-fluid rounded-circle" alt=""/>
-                            </div>
-                            <div className="offset-lg-2"></div>
-                            <div className="col-lg-6 about-text-grid position-relative  mt-lg-0 mt-5">
-                                <div className="d-flex">
-                                    <span className="process-circle"></span>
-                                    <h4 className="sec-title1">Step 3</h4>
-                                </div>
-                                <p id='steps' className="mt-md-5 mb-3 mt-3">Join a session</p>
-                                <div className="process-direction2"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <div className="agileits-partners py-sm-5 py-4" id="partners">
-                    <div className="container py-lg-5">
-                        <div className="title-wthree text-center">
-                            <h3 className="agile-title">our Team</h3>
-                            <span></span>
-                        </div>
-                        <div className="blogls py-5 bg-light border-bottom" id="what">
-                            <div className="container py-xl-5 py-lg-3">
-                                <div className="row package-grids">
-                                    <div className="col-md-4 blog">
-                                        <div className="blogs-top">
-                                            <img src={require("../../images/a1.jpg")} alt="" className="img-fluid"/>
-                                        </div>
-                                        <div className="blogs-bottom p-4 bg-white">
-                                            <p className="title-para text-center mx-auto mb-sm-5 mb-4">John Saad</p>
-                                        </div>
+                                <div className="offset-lg-2"></div>
+                                <div className="col-lg-6 about-text-grid position-relative mt-lg-0 mt-5">
+                                    <div className="d-flex">
+                                        <span className="process-circle"></span>
+                                        <h4 className="sec-title1">Step 1</h4>
                                     </div>
-                                    <div className="col-md-4 blog my-md-0 my-5">
-                                        <div className="blogs-top">
-                                            <img src={require("../../images/a2.jpg")} alt="" className="img-fluid"/>
-                                        </div>
-                                        <div className="blogs-bottom p-4 bg-white">
-                                            <p className="title-para text-center mx-auto mb-sm-5 mb-4">Long Pham</p>
-                                        </div>
+                                    <p id='steps' className="mt-md-5 mb-3 mt-3">Register on the home page</p>
+                                    <div className="process-direction"></div>
+                                </div>
+                            </div>
+                            <div className="row abbot-main py-lg-5 py-4 my-md-5">
+                                <div className="col-lg-6 about-text-grid">
+                                    <div className="d-flex">
+                                        <h4 className="sec-title1 flow-odd">Step 2</h4>
+                                        <span className="process-circle"></span>
                                     </div>
-                                    <div className="col-md-4 blog">
-                                        <div className="blogs-top">
-                                            <img src={require("../../images/a3.jpg")} alt="" className="img-fluid"/>
+                                    <ul className="list-group mt-md-3 my-3">
+                                        <li className="list-group-item border-0">
+                                            <i className="fas fa-check mr-3 mt-lg-0 mt-3"></i>Join or create a
+                                            conference
+                                        </li>
+                                        <li className="list-group-item border-0">
+                                            <i className="fas fa-check mr-3 mt-lg-0 mt-3"></i>Repeat this for committee
+                                            and section
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="col-lg-4 abbot-right">
+                                    <img src={require("../../images/p2.png")} className="img-fluid rounded-circle"
+                                         alt=""/>
+                                </div>
+                            </div>
+                            <div className="row abbot-main py-lg-5 py-4 mb-sm-5">
+                                <div className="col-lg-4 abbot-right">
+                                    <img src={require("../../images/p3.png")} className="img-fluid rounded-circle"
+                                         alt=""/>
+                                </div>
+                                <div className="offset-lg-2"></div>
+                                <div className="col-lg-6 about-text-grid position-relative  mt-lg-0 mt-5">
+                                    <div className="d-flex">
+                                        <span className="process-circle"></span>
+                                        <h4 className="sec-title1">Step 3</h4>
+                                    </div>
+                                    <p id='steps' className="mt-md-5 mb-3 mt-3">Join a session</p>
+                                    <div className="process-direction2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div className="agileits-partners py-sm-5 py-4" id="partners">
+                        <div className="container py-lg-5">
+                            <div className="title-wthree text-center">
+                                <h3 className="agile-title">our Team</h3>
+                                <span></span>
+                            </div>
+                            <div className="blogls py-5 bg-light border-bottom" id="what">
+                                <div className="container py-xl-5 py-lg-3">
+                                    <div className="row package-grids">
+                                        <div className="col-md-4 blog">
+                                            <div className="blogs-top">
+                                                <img src={require("../../images/a1.jpg")} alt="" className="img-fluid"/>
+                                            </div>
+                                            <div className="blogs-bottom p-4 bg-white">
+                                                <p className="title-para text-center mx-auto mb-sm-5 mb-4">John Saad</p>
+                                            </div>
                                         </div>
-                                        <div className="blogs-bottom p-4 bg-white">
-                                            <p className="title-para text-center mx-auto mb-sm-5 mb-4">Ramzy Saad</p>
+                                        <div className="col-md-4 blog my-md-0 my-5">
+                                            <div className="blogs-top">
+                                                <img src={require("../../images/a2.jpg")} alt="" className="img-fluid"/>
+                                            </div>
+                                            <div className="blogs-bottom p-4 bg-white">
+                                                <p className="title-para text-center mx-auto mb-sm-5 mb-4">Long Pham</p>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 blog">
+                                            <div className="blogs-top">
+                                                <img src={require("../../images/a3.jpg")} alt="" className="img-fluid"/>
+                                            </div>
+                                            <div className="blogs-bottom p-4 bg-white">
+                                                <p className="title-para text-center mx-auto mb-sm-5 mb-4">Ramzy
+                                                    Saad</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

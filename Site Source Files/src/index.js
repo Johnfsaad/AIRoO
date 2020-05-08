@@ -12,9 +12,9 @@ import './css/style.css';
 import Home from './components/Home/HomePrototype';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
-import Conference from './components/Navigation/Conference';
-import Committee from './components/Navigation/Committee';
+import RoO from './components/Navigation/RoO';
 import Section from './components/Navigation/Section';
+import Session from './components/Navigation/Session';
 
 class AppRouter extends React.Component{
 	constructor(props){
@@ -76,8 +76,7 @@ class AppRouter extends React.Component{
 						{this.state.user &&
 							<div>
 								<Link to="/">Home</Link>
-								<Link to="/conference">Conference</Link>
-								<Link to="/committee">Committee</Link>
+								<Link to="/RoO">RoO</Link>
 								<Link to="/section">Section</Link>
 								<a href="#!" onClick={this.logOutUser}>Logout</a>
 							</div>
@@ -88,9 +87,9 @@ class AppRouter extends React.Component{
 						<Route path="/" exact render={() => <Home user={this.state.user}/>} />
 						<Route path="/login" exact component={Login} />
 						<Route path="/register" exact component={Register} />
-						<Route path="/conference" exact component={Conference} />
-						<Route path="/committee" exact component={Committee} />
-						<Route path="/section" exact component={Section} />
+						<Route path="/RoO" component={() => <RoO user={this.state.user}/>} />
+						<Route path="/section" component={() => <Section user={this.state.user}/>} />
+						<Route path="/session" component={(props) => <Session {...props} user={this.state.user}/>} />
 						<Route component={NoMatch} />
 					</Switch>
 				</div>
@@ -99,7 +98,7 @@ class AppRouter extends React.Component{
 	}
 }
 
-const NoMatch = ({location}) => <div>No route match for {location.pathname}</div>;
+const NoMatch = ({location}) => <div>The requested URL {location.pathname} was not found on this server.</div>;
 
 ReactDOM.render(
 	<AppRouter />, 
