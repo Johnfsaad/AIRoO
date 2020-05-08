@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from '../../firebase';
 import {Link} from 'react-router-dom';
 import '../Home/Home.css';
+import BlocklyJS from 'blockly/javascript';
 
 import Chatbox from '../Home/Chatbox';
 
@@ -33,10 +34,18 @@ class Session extends React.Component{
     }
 
     componentDidMount() {
+        function runCode(code){
+            window.loopTRAP=1000;
+            BlocklyJS.JavaScript.INFINITE_LOOP_TRAP = 'if(--window.LoopTrap == 0) throw "Infinite loop.";\n';
+            try {
+                eval(code);
+            } catch (e) {}
+        }
+
         const codeStore = firebase.database().ref('Code');
         codeStore.on('value', snapshot => {
             const code = snapshot.val();
-            eval(code);
+            runCode(code);
         });
     }
 
