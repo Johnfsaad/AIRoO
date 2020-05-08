@@ -25,10 +25,6 @@ class RoO extends React.Component {
         codeStore.set(code);
     }
 
-    componentDidMount() {
-        const sectionRef = firebase.database().ref('RoO');
-    }
-
     render() {
         return (
             <div className="RoO-container">
@@ -45,6 +41,21 @@ class RoO extends React.Component {
                                           initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
                                             <Block type="controls_ifelse" x="0" y="0"/>
                                             </xml>`}>
+                            <category name="Logic" colour="#5C81A6">
+                                <block type="controls_if"></block>
+                                <block type="logic_compare">
+                                    <field name="OP">EQ</field>
+                                </block>
+                                <block type="logic_operation">
+                                    <field name="OP">AND</field>
+                                </block>
+                                <block type="logic_negate"></block>
+                                <block type="logic_boolean">
+                                    <field name="BOOL">TRUE</field>
+                                </block>
+                                <block type="logic_null"></block>
+                                <block type="logic_ternary"></block>
+                            </category>
                             <category name="Text" colour="#5CA68D">
                                 <Block type="text_charAt">
                                     <mutation at="true"/>

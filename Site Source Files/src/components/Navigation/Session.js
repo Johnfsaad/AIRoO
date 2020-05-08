@@ -53,6 +53,7 @@ class Session extends React.Component {
                 const codeStore = firebase.database().ref('Code');
                 codeStore.on('value', snapshot => {
                     const code = snapshot.val();
+                    console.log(code);
                     runCode(code);
                 });
             }
