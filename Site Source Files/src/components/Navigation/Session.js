@@ -20,28 +20,33 @@ class Session extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         if (this.state.message !== '') {
-            var temp = this.state.message;
+            var message = this.state.message;
+            var username = this.props.user.displayName;
             const chatRef = firebase.database().ref('Section/' + this.props.location.state + '/Chat');
             const chat = {
-                message: temp,
-                user: this.props.user.displayName,
+                message: message,
+                user: username,
                 timestamp: new Date().getTime()
             }
             chatRef.push(chat);
 
-            function print(str) {
-                setTimeout(function () {
+            function print() {
+                if (message.indexOf("Motion Print ") == 0) {
                     const print = {
-                        message: str.substring(str.indexOf("Motion Print") + 12),
-                        user: this.props.user.displayName,
+                        message: message.substring(message.indexOf("Motion Print ") + 13),
+                        user: username,
                         timestamp: new Date().getTime()
                     }
                     chatRef.push(print);
-                }, 1000);
+                }
             }
 
             function runCode(code) {
-                print(temp);
+                try {
+                    print();
+                } catch (e) {
+                    console.log(e);
+                }
             }
 
             const codeStore = firebase.database().ref('Code');
@@ -64,7 +69,6 @@ class Session extends React.Component {
                                onChange={this.handleChange} onKeyPress={this.keyPress}
                                placeholder='Leave a message...'/>
                     </form>
-
                     <Chatbox section={this.props.location.state}/>
                 </div>
                 }
