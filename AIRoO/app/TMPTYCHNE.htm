@@ -10738,22 +10738,6 @@ span.icon.trash::before {
  
 
 
-  <script>
-          var workspace = Blockly.inject('blocklyDiv',
-		  
-           {toolbox: document.getElementById('toolbox')});
-		   
-		   function runCode(){
-			   window.loopTRAP=1000;
-			  Blockly.JavaScript.INFINITE_LOOP_TRAP = 'if(--window.LoopTrap == 0) throw "Infinite loop.";\n';
-              var code = Blockly.JavaScript.workspaceToCode(workspace);
-			 try {
-             eval(code);
-                 } catch (e) {
-                   alert(e);
-				 }}
-                  		  
-   </script>
    
  <div class="output">
  <h1 id= "output"></h1></div>
