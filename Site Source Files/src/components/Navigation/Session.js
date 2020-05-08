@@ -5,8 +5,8 @@ import './blocks/customblocks';
 import './generator/generator';
 import Chatbox from '../Home/Chatbox';
 
-class Session extends React.Component{
-    constructor(props){
+class Session extends React.Component {
+    constructor(props) {
         super(props);
         this.state = {
             message: ''
@@ -19,25 +19,31 @@ class Session extends React.Component{
 
     handleSubmit = e => {
         e.preventDefault();
-        if(this.state.message !== ''){
+        if (this.state.message !== '') {
+            var temp = this.state.message;
             const chatRef = firebase.database().ref('Section/' + this.props.location.state + '/Chat');
             const chat = {
-                message: this.state.message,
+                message: temp,
                 user: this.props.user.displayName,
                 timestamp: new Date().getTime()
             }
-
             chatRef.push(chat);
-            this.setState({message: ''});
-        }
-    }
 
-    keyPress = (event) => {
-        if (event.key == 'Enter'){
-            function runCode(code){
-                try {
-                    //alert(event.target.value);
-                } catch (e) {}
+            function print(str) {
+                const chatRef = firebase.database().ref('Section/' + this.props.location.state + '/Chat');
+                setTimeout(function (str) {
+                    alert(str);
+                    const chat = {
+                        message: str.substring(str.indexOf("Motion Print") + 12),
+                        user: this.props.user.displayName,
+                        timestamp: new Date().getTime()
+                    }
+                    chatRef.push(chat);
+                }, 1000);
+            }
+
+            function runCode(code) {
+                print(temp);
             }
 
             const codeStore = firebase.database().ref('Code');
@@ -45,16 +51,20 @@ class Session extends React.Component{
                 const code = snapshot.val();
                 runCode(code);
             });
+
+            this.setState({message: ''});
         }
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="session--container">
                 {this.props.user &&
                 <div className="allow-chat">
                     <form className="send-chat" onSubmit={this.handleSubmit}>
-                        <input type="text" name="message" id="message" value={this.state.message} onChange={this.handleChange} onKeyPress={this.keyPress} placeholder='Leave a message...' />
+                        <input type="text" name="message" id="message" value={this.state.message}
+                               onChange={this.handleChange} onKeyPress={this.keyPress}
+                               placeholder='Leave a message...'/>
                     </form>
 
                     <Chatbox section={this.props.location.state}/>
