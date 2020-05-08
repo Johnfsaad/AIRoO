@@ -30,15 +30,13 @@ class Session extends React.Component {
             chatRef.push(chat);
 
             function print(str) {
-                const chatRef = firebase.database().ref('Section/' + this.props.location.state + '/Chat');
-                setTimeout(function (str) {
-                    alert(str);
-                    const chat = {
+                setTimeout(function () {
+                    const print = {
                         message: str.substring(str.indexOf("Motion Print") + 12),
                         user: this.props.user.displayName,
                         timestamp: new Date().getTime()
                     }
-                    chatRef.push(chat);
+                    chatRef.push(print);
                 }, 1000);
             }
 

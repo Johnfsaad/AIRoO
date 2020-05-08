@@ -162,13 +162,12 @@ class Home extends React.Component {
                                                 <p className="title-para text-center mx-auto mb-sm-5 mb-4">Long Pham</p>
                                             </div>
                                         </div>
-                                        <div className="col-md-4 blog">
+                                        <div className="col-md-4 blog my-md-0 my-5">
                                             <div className="blogs-top">
                                                 <img src={require("../../images/a3.jpg")} alt="" className="img-fluid"/>
                                             </div>
                                             <div className="blogs-bottom p-4 bg-white">
-                                                <p className="title-para text-center mx-auto mb-sm-5 mb-4">Ramzy
-                                                    Saad</p>
+                                                <p className="title-para text-center mx-auto mb-sm-5 mb-4">Ramzy Saad</p>
                                             </div>
                                         </div>
                                     </div>
