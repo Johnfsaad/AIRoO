@@ -13,6 +13,7 @@ import Home from './components/Home/HomePrototype';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
 import Section from './components/Navigation/Section';
+import Session from './components/Navigation/Session';
 
 class AppRouter extends React.Component{
 	constructor(props){
@@ -84,7 +85,8 @@ class AppRouter extends React.Component{
 						<Route path="/" exact render={() => <Home user={this.state.user}/>} />
 						<Route path="/login" exact component={Login} />
 						<Route path="/register" exact component={Register} />
-						<Route path="/section" exact component={Section} />
+						<Route path="/section" component={() => <Section user={this.state.user}/>}/>
+						<Route path="/session" exact component={Session} />
 						<Route component={NoMatch} />
 					</Switch>
 				</div>
@@ -93,7 +95,7 @@ class AppRouter extends React.Component{
 	}
 }
 
-const NoMatch = ({location}) => <div>No route match for {location.pathname}</div>;
+const NoMatch = ({location}) => <div>The requested URL {location.pathname} was not found on this server.</div>;
 
 ReactDOM.render(
 	<AppRouter />, 

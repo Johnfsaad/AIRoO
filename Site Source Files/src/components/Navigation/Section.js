@@ -1,6 +1,6 @@
 import React from 'react';
-import firebase from '../../firebase';
-import {Link} from 'react-router-dom';
+import firebase, {auth, provider} from '../../firebase';
+import {BrowserRouter as Router, Route, Link, Switch, withRouter, Redirect} from 'react-router-dom';
 
 import '../../css/boilerplate.css';
 import '../../css/Untitled-2.css';
@@ -29,8 +29,8 @@ class Section extends React.Component {
             const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Section');
             const section = {
                 name: this.state.name,
-                availability: 'null',
-                time: 'null'
+                availability: 'N/A',
+                time: 'N/A'
             }
 
             sectionRef.push(section);
@@ -47,7 +47,6 @@ class Section extends React.Component {
             for (let user in getUsers) {
                 for (let section in getUsers[user]) {
                     for (let sectionID in getUsers[user][section]) {
-                        console.log(getUsers[user][section][sectionID]);
                         if (getUsers[user][section][sectionID].name !== '') {
                             sectionList.push({
                                 name: getUsers[user][section][sectionID].name,
@@ -59,7 +58,7 @@ class Section extends React.Component {
                 }
             }
 
-            this.setState({sections: sectionList.reverse()});
+            this.setState({sections: sectionList});
         });
     }
 
@@ -70,25 +69,38 @@ class Section extends React.Component {
                     <td>{section.name}</td>
                     <td>{section.availability}</td>
                     <td>{section.time}</td>
+                    <Link
+                        to={{
+                            pathname: "/session",
+                            data: section.name
+                        }}>
+                        Join Session
+                    </Link>
                 </tr>
             );
         });
         return (
             <div className="section-container">
-                <ul className='chat-list'>
-                    <div>
-                        <tr>
-                            <td>Name</td>
-                            <td>Available</td>
-                            <td>Uptime</td>
-                        </tr>
-                        {section}
-                    </div>
-                    <form className="create-section" onSubmit={this.handleSubmit}>
-                        <input type="text" name="name" id="name" value={this.state.name} onChange={this.handleChange}
-                               placeholder='Leave a message...'/>
-                    </form>
-                </ul>
+                {this.props.user ?
+                    <ul className='section-list'>
+                        <div>
+                            <tr>
+                                <td>Name</td>
+                                <td>Available</td>
+                                <td>Uptime</td>
+                            </tr>
+                            {section}
+                        </div>
+                        <form className="create-section" onSubmit={this.handleSubmit}>
+                            <input type="text" name="name" id="name" value={this.state.name}
+                                   onChange={this.handleChange}
+                                   placeholder='New section name'/>
+                        </form>
+                    </ul>
+                    : <Route
+                        render={props => <Redirect to={{pathname: '/'}}/>}
+                    />
+                }
             </div>
         );
     }
