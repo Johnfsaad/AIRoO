@@ -94,13 +94,6 @@ class RoO extends React.Component {
                                             <block type="controls_ifelse" x="0" y="0"></block>
                                             </xml>`}>
                             <Block type="closesession"/>
-                            <Block type=""/>
-                            <Block type=""/>
-                            <Block type=""/>
-                            <Block type=""/>
-                            <Block type=""/>
-                            <Block type=""/>
-                            <Block type=""/>
                             {/*<Block type="test_react_field"/>*/}
                             {/*<Block type="test_react_date_field"/>*/}
                             {/*<Block type="controls_ifelse"/>*/}
