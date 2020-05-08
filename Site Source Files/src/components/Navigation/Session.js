@@ -34,8 +34,6 @@ class Session extends React.Component{
 
     componentDidMount() {
         const codeStore = firebase.database().ref('Code');
-        eval(code);
-
         codeStore.on('value', snapshot => {
             const code = snapshot.val();
             eval(code);

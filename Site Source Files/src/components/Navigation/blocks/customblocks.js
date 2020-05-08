@@ -85,25 +85,6 @@ Blockly.Blocks['printwithtime'] = {
     }
 };
 
-function printTo(entry) {
-    document.getElementById("output").innerHTML = entry;
-}
-
-Blockly.JavaScript['printwithtime'] = function (block) {
-    var text_name = block.getFieldValue('string');
-    var code = '...;\n';
-    printTo(text_name);
-    var seconds_left = 10;
-    var interval = setInterval(function () {
-        document.getElementById('output').innerHTML = --seconds_left;
-
-        if (seconds_left <= 0) {
-            document.getElementById('output').innerHTML = 'Time Out';
-            clearInterval(interval);
-        }
-    }, 1000);
-};
-
 Blockly.Blocks['print'] = {
     init: function () {
         this.appendDummyInput()
@@ -115,21 +96,6 @@ Blockly.Blocks['print'] = {
         this.setTooltip("");
         this.setHelpUrl("");
     }
-};
-
-function printTo(entry) {
-
-    document.getElementById("output").innerHTML = entry;
-}
-
-Blockly.JavaScript['print'] = function (block) {
-    var text_name = block.getFieldValue('NAME');
-    // TODO: Assemble JavaScript into code variable.
-
-    var code = '...;\n';
-    printTo(text_name);
-
-
 };
 
 Blockly.Blocks['listen'] = {
