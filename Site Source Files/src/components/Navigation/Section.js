@@ -8,14 +8,14 @@ import '../../css/bootstrap.css';
 import '../../css/style.css';
 import '../../css/styles_co.css'
 import '../../css/SpryAccordion.css';
-import Chatbox from "../Home/Chatbox";
+import '../Home/Home.css';
 
 class Section extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             name: '',
-            sections: {}
+            sections: []
         }
     }
 
@@ -27,32 +27,39 @@ class Section extends React.Component {
         e.preventDefault();
         if (this.state.name !== '') {
             const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Section');
-            const chat = {
+            const section = {
                 name: this.state.name,
                 availability: 'null',
                 time: 'null'
             }
 
-            sectionRef.push(chat);
-            this.state.name = '';
+            sectionRef.push(section);
+            this.setState({name: ''});
         }
     }
 
     componentDidMount() {
-        const sectionRef = firebase.database().ref('Users/' + firebase.auth().currentUser.displayName + '/Section');
+        const sectionRef = firebase.database().ref('Users');///' + firebase.auth().currentUser.displayName + '/Section');
         sectionRef.on('value', snapshot => {
-            const getSections = snapshot.val();
+            const getUsers = snapshot.val();
             let sectionList = [];
-            for (let section in getSections) {
-                if (getSections[section].name !== '') {
-                    sectionList.push({
-                        name: getSections[section].name,
-                        availability: getSections[section].availability,
-                        time: getSections[section].time
-                    });
+
+            for (let user in getUsers) {
+                for (let section in getUsers[user]) {
+                    for (let sectionID in getUsers[user][section]) {
+                        console.log(getUsers[user][section][sectionID]);
+                        if (getUsers[user][section][sectionID].name !== '') {
+                            sectionList.push({
+                                name: getUsers[user][section][sectionID].name,
+                                availability: getUsers[user][section][sectionID].availability,
+                                time: getUsers[user][section][sectionID].time
+                            });
+                        }
+                    }
                 }
             }
-            this.setState({sections: this.state.sections.concat(sectionList.reverse)});
+
+            this.setState({sections: sectionList.reverse()});
         });
     }
 
@@ -75,10 +82,11 @@ class Section extends React.Component {
                             <td>Available</td>
                             <td>Uptime</td>
                         </tr>
-                        {section.length ? section : <></>}
+                        {section}
                     </div>
                     <form className="create-section" onSubmit={this.handleSubmit}>
-                        <input type="text" name="sectionName" id="message" value={this.state.name} onChange={this.handleChange} placeholder='Leave a message...' />
+                        <input type="text" name="name" id="name" value={this.state.name} onChange={this.handleChange}
+                               placeholder='Leave a message...'/>
                     </form>
                 </ul>
             </div>

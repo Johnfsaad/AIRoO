@@ -12,8 +12,6 @@ import './css/style.css';
 import Home from './components/Home/HomePrototype';
 import Login from './components/Auth/Login';
 import Register from './components/Auth/Register';
-import Conference from './components/Navigation/Conference';
-import Committee from './components/Navigation/Committee';
 import Section from './components/Navigation/Section';
 
 class AppRouter extends React.Component{
@@ -76,8 +74,6 @@ class AppRouter extends React.Component{
 						{this.state.user &&
 							<div>
 								<Link to="/">Home</Link>
-								<Link to="/conference">Conference</Link>
-								<Link to="/committee">Committee</Link>
 								<Link to="/section">Section</Link>
 								<a href="#!" onClick={this.logOutUser}>Logout</a>
 							</div>
@@ -88,8 +84,6 @@ class AppRouter extends React.Component{
 						<Route path="/" exact render={() => <Home user={this.state.user}/>} />
 						<Route path="/login" exact component={Login} />
 						<Route path="/register" exact component={Register} />
-						<Route path="/conference" exact component={Conference} />
-						<Route path="/committee" exact component={Committee} />
 						<Route path="/section" exact component={Section} />
 						<Route component={NoMatch} />
 					</Switch>
