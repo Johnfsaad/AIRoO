@@ -1,7 +1,6 @@
 import React from 'react';
-import firebase, {auth, provider} from '../../firebase';
-import {BrowserRouter as Router, Route, Link, Switch, withRouter, Redirect} from 'react-router-dom';
-
+import firebase from '../../firebase';
+import {Route, Link, Redirect} from 'react-router-dom';
 import '../../css/boilerplate.css';
 import '../../css/Untitled-2.css';
 import '../../css/bootstrap.css';

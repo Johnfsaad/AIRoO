@@ -1,7 +1,6 @@
 import React from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import firebase from '../../firebase';
-
 import './Auth.css';
 import Register from './Register';
 

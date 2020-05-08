@@ -1,9 +1,8 @@
 import React from 'react';
 import firebase from '../../firebase';
-import {Link} from 'react-router-dom';
 import '../Home/Home.css';
-import BlocklyJS from 'blockly/javascript';
-
+import './blocks/customblocks';
+import './generator/generator';
 import Chatbox from '../Home/Chatbox';
 
 class Session extends React.Component{
@@ -33,20 +32,20 @@ class Session extends React.Component{
         }
     }
 
-    componentDidMount() {
-        function runCode(code){
-            window.loopTRAP=1000;
-            BlocklyJS.JavaScript.INFINITE_LOOP_TRAP = 'if(--window.LoopTrap == 0) throw "Infinite loop.";\n';
-            try {
-                eval(code);
-            } catch (e) {}
-        }
+    keyPress = (event) => {
+        if (event.key == 'Enter'){
+            function runCode(code){
+                try {
+                    //alert(event.target.value);
+                } catch (e) {}
+            }
 
-        const codeStore = firebase.database().ref('Code');
-        codeStore.on('value', snapshot => {
-            const code = snapshot.val();
-            runCode(code);
-        });
+            const codeStore = firebase.database().ref('Code');
+            codeStore.on('value', snapshot => {
+                const code = snapshot.val();
+                runCode(code);
+            });
+        }
     }
 
     render(){
@@ -55,7 +54,7 @@ class Session extends React.Component{
                 {this.props.user &&
                 <div className="allow-chat">
                     <form className="send-chat" onSubmit={this.handleSubmit}>
-                        <input type="text" name="message" id="message" value={this.state.message} onChange={this.handleChange} placeholder='Leave a message...' />
+                        <input type="text" name="message" id="message" value={this.state.message} onChange={this.handleChange} onKeyPress={this.keyPress} placeholder='Leave a message...' />
                     </form>
 
                     <Chatbox section={this.props.location.state}/>
