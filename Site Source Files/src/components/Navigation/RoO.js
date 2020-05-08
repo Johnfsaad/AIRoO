@@ -21,8 +21,9 @@ class RoO extends React.Component {
     }
 
     generateCode = () => {
+        const codeStore = firebase.database().ref('Code');
         var code = BlocklyJS.workspaceToCode(this.simpleWorkspace.workspace);
-        console.log(code);
+        codeStore.push(code);
     }
 
     componentDidMount() {
@@ -81,7 +82,7 @@ class RoO extends React.Component {
             <div className="RoO-container">
                 {this.props.user ?
                     <div>
-                        <button onClick={this.generateCode}>Convert</button>
+                        <button onClick={this.generateCode}>Save</button>
                         <BlocklyComponent ref={e => this.simpleWorkspace = e}
                                           readOnly={false} trashcan={true} media={'media/'}
                                           move={{
