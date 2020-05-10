@@ -149,7 +149,7 @@ class Home extends React.Component {
                             <div className="blogls py-5 bg-light border-bottom" id="what">
                                 <div className="container py-xl-5 py-lg-3">
                                     <div className="row package-grids">
-                                        <div className="col-md-4 blog my-md-0 my-5">
+                                        <div className="col-md-4 blog my-md-0 my-5" style={{left:50}}>
                                             <div className="blogs-top">
                                                 <img src={require("../../images/a2.jpg")} alt="" className="img-fluid"/>
                                             </div>
@@ -157,7 +157,7 @@ class Home extends React.Component {
                                                 <p className="title-para text-center mx-auto mb-sm-5 mb-4">Long Pham</p>
                                             </div>
                                         </div>
-                                        <div className="col-md-4 blog">
+                                        <div className="col-md-4 blog" style={{left:150}}>
                                             <div className="blogs-top">
                                                 <img src={require("../../images/a3.jpg")} alt="" className="img-fluid"/>
                                             </div>
