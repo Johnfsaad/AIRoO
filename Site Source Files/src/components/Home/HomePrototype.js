@@ -150,31 +150,22 @@ class Home extends React.Component {
                             <div className="blogls py-5 bg-light border-bottom" id="what">
                                 <div className="container py-xl-5 py-lg-3">
                                     <div className="row package-grids">
-<<<<<<< HEAD
                                         <div className="col-md-4 blog">
                                             <div className="blogs-top">
                                                 <img src={require("../../images/a1.jpg")} alt="" className="img-fluid"/>
-=======
-                                        <div className="col-md-4 blog my-md-0 my-5">
-                                            <div className="blogs-top">
-                                                <img src={require("../../images/LP.jpg")} alt="" className="img-fluid"/>
->>>>>>> 5362cabae856af5ed7f8d36ec3fda37dd6e7c8a2
                                             </div>
                                             <div className="blogs-bottom p-4 bg-white">
                                                 <p className="title-para text-center mx-auto mb-sm-5 mb-4">Long Pham</p>
                                             </div>
                                         </div>
-<<<<<<< HEAD
                                         
                                         <div className="col-md-4 blog">
-=======
-                                        <div className="col-md-4 blog my-md-0 my-5">
->>>>>>> 5362cabae856af5ed7f8d36ec3fda37dd6e7c8a2
                                             <div className="blogs-top">
                                                 <img src={require("../../images/a3.jpg")} alt="" className="img-fluid"/>
                                             </div>
                                             <div className="blogs-bottom p-4 bg-white">
-                                                <p className="title-para text-center mx-auto mb-sm-5 mb-4">Ramzy Saad</p>
+                                                <p className="title-para text-center mx-auto mb-sm-5 mb-4">Ramzy
+                                                    Saad</p>
                                             </div>
                                         </div>
                                     </div>
