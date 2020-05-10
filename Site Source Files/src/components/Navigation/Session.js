@@ -20,37 +20,43 @@ class Session extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         if (this.state.message !== '') {
-            var temp = this.state.message;
+            var message = this.state.message;
+            var username = this.props.user.displayName;
             const chatRef = firebase.database().ref('Section/' + this.props.location.state + '/Chat');
             const chat = {
-                message: temp,
-                user: this.props.user.displayName,
+                message: message,
+                user: username,
                 timestamp: new Date().getTime()
             }
             chatRef.push(chat);
 
-            function print(str) {
-                const chatRef = firebase.database().ref('Section/' + this.props.location.state + '/Chat');
-                setTimeout(function (str) {
-                    alert(str);
-                    const chat = {
-                        message: str.substring(str.indexOf("Motion Print") + 12),
-                        user: this.props.user.displayName,
-                        timestamp: new Date().getTime()
+            if (message.indexOf("Motion ") == 0) {
+                function print() {
+                    if (message.indexOf("Motion Print ") == 0) {
+                        const print = {
+                            message: message.substring(message.indexOf("Motion Print ") + 13),
+                            user: username,
+                            timestamp: new Date().getTime()
+                        }
+                        chatRef.push(print);
                     }
-                    chatRef.push(chat);
-                }, 1000);
-            }
+                }
 
-            function runCode(code) {
-                print(temp);
-            }
+                function runCode(code) {
+                    try {
+                        print();
+                    } catch (e) {
+                        console.log(e);
+                    }
+                }
 
-            const codeStore = firebase.database().ref('Code');
-            codeStore.on('value', snapshot => {
-                const code = snapshot.val();
-                runCode(code);
-            });
+                const codeStore = firebase.database().ref('Code');
+                codeStore.on('value', snapshot => {
+                    const code = snapshot.val();
+                    console.log(code);
+                    runCode(code);
+                });
+            }
 
             this.setState({message: ''});
         }
@@ -66,7 +72,6 @@ class Session extends React.Component {
                                onChange={this.handleChange} onKeyPress={this.keyPress}
                                placeholder='Leave a message...'/>
                     </form>
-
                     <Chatbox section={this.props.location.state}/>
                 </div>
                 }
