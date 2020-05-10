@@ -100,23 +100,27 @@ class Home extends React.Component {
                                 <div className="col-lg-6 about-text-grid position-relative mt-lg-0 mt-5">
                                     <div className="d-flex">
                                         <span className="process-circle"></span>
-                                        <h4 className="sec-title1">Register or Login</h4>
+                                        <h4 className="sec-title1">Step 1</h4>
                                     </div>
-                                    <p id='steps' className="mt-md-5 mb-3 mt-3">To access AIRoO online registration system,  You MUST be a chair or one of the participants of the conference.</p>
+                                    <p id='steps' className="mt-md-5 mb-3 mt-3">Register on the home page</p>
                                     <div className="process-direction"></div>
                                 </div>
                             </div>
                             <div className="row abbot-main py-lg-5 py-4 my-md-5">
                                 <div className="col-lg-6 about-text-grid">
                                     <div className="d-flex">
-                                        <h4 className="sec-title1 flow-odd">Conference Leader</h4>
+                                        <h4 className="sec-title1 flow-odd">Step 2</h4>
                                         <span className="process-circle"></span>
                                     </div>
                                     <ul className="list-group mt-md-3 my-3">
                                         <li className="list-group-item border-0">
-                                            <i className="fas fa-check mr-3 mt-lg-0 mt-3"></i>If you are one of the Conference Leaders, Join RoO page and design and build all the possible rules for your Session using the blocks 
+                                            <i className="fas fa-check mr-3 mt-lg-0 mt-3"></i>Join or create a
+                                            conference
                                         </li>
-                                        
+                                        <li className="list-group-item border-0">
+                                            <i className="fas fa-check mr-3 mt-lg-0 mt-3"></i>Repeat this for committee
+                                            and section
+                                        </li>
                                     </ul>
                                 </div>
                                 <div className="col-lg-4 abbot-right">
@@ -133,9 +137,9 @@ class Home extends React.Component {
                                 <div className="col-lg-6 about-text-grid position-relative  mt-lg-0 mt-5">
                                     <div className="d-flex">
                                         <span className="process-circle"></span>
-                                        <h4 className="sec-title1">onference Participants</h4>
+                                        <h4 className="sec-title1">Step 3</h4>
                                     </div>
-                                    <p id='steps' className="mt-md-5 mb-3 mt-3">If you are one of the Conference participants, Join Session page and join your session </p>
+                                    <p id='steps' className="mt-md-5 mb-3 mt-3">Join a session</p>
                                     <div className="process-direction2"></div>
                                 </div>
                             </div>
@@ -155,10 +159,17 @@ class Home extends React.Component {
                                                 <img src={require("../../images/a1.jpg")} alt="" className="img-fluid"/>
                                             </div>
                                             <div className="blogs-bottom p-4 bg-white">
+                                                <p className="title-para text-center mx-auto mb-sm-5 mb-4">John Saad</p>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-4 blog my-md-0 my-5">
+                                            <div className="blogs-top">
+                                                <img src={require("../../images/LP.jpg")} alt="" className="img-fluid"/>
+                                            </div>
+                                            <div className="blogs-bottom p-4 bg-white">
                                                 <p className="title-para text-center mx-auto mb-sm-5 mb-4">Long Pham</p>
                                             </div>
                                         </div>
-                                        
                                         <div className="col-md-4 blog">
                                             <div className="blogs-top">
                                                 <img src={require("../../images/a3.jpg")} alt="" className="img-fluid"/>
