@@ -15,6 +15,8 @@ import Register from './components/Auth/Register';
 import RoO from './components/Navigation/RoO';
 import Section from './components/Navigation/Section';
 import Session from './components/Navigation/Session';
+import Support from './components/Home/Support';
+import About from './components/Home/About';
 
 class AppRouter extends React.Component{
 	constructor(props){
@@ -70,6 +72,8 @@ class AppRouter extends React.Component{
 								<Link to="/">Home</Link>
 								<Link to="/login">Login</Link>
 								<Link to="/register">Register</Link>
+								<Link to="/support">Support</Link>
+								<Link to="/about">About</Link>
 							</div>
 						}
 
@@ -78,6 +82,8 @@ class AppRouter extends React.Component{
 								<Link to="/">Home</Link>
 								<Link to="/RoO">RoO</Link>
 								<Link to="/section">Section</Link>
+								<Link to="/support">Support</Link>
+								<Link to="/about">About</Link>
 								<a href="#!" onClick={this.logOutUser}>Logout</a>
 							</div>
 						}
@@ -90,6 +96,8 @@ class AppRouter extends React.Component{
 						<Route path="/RoO" component={() => <RoO user={this.state.user}/>} />
 						<Route path="/section" component={() => <Section user={this.state.user}/>} />
 						<Route path="/session" component={(props) => <Session {...props} user={this.state.user}/>} />
+						<Route path="/support" exact component={Support} />
+						<Route path="/about" exact component={About} />
 						<Route component={NoMatch} />
 					</Switch>
 				</div>
