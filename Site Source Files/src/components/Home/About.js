@@ -10,7 +10,7 @@ class About extends React.Component {
         return (
             <div className="about-container">
                 <div className="column">
-                    <div className="container-small" style={{float:'left'}}>
+                    <div className="container-small" style={{float:'right'}}>
                         <div className="mene">
                             <div className='mene-header'>
                                 <h1>
@@ -37,7 +37,7 @@ class About extends React.Component {
                     </div>
                 </div>
                 <div className="column">
-                    <div className="container-small" style={{float:'right'}}>
+                    <div className="container-small" style={{float:'left'}}>
                         <div className="mene">
                             <div className='mene-header'>
                                 <h1>
