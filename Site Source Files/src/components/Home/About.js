@@ -53,7 +53,7 @@ class About extends React.Component {
                                 </a>
                             </p>
                             <p>
-                                <a href="https://github.com/ramzysaad/">
+                                <a href="https://github.com/lnp5131/">
                                     <img border="0" alt="linkedin" src={require("../../images/github.png")} style={{float:'right', paddingTop:20}} width="160" height="100"/>
                                 </a>
                             </p>
