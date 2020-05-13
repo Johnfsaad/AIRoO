@@ -1,7 +1,7 @@
 import React from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import firebase from '../../firebase';
-import './Auth.css';
+import '../../css/Auth.css';
 import Register from './Register';
 
 class Login extends React.Component{

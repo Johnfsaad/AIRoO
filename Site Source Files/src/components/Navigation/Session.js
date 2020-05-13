@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from '../../firebase';
-import '../Home/Home.css';
+import '../../css/Home.css';
 import './blocks/customblocks';
 import './generator/generator';
 import Chatbox from '../Home/Chatbox';

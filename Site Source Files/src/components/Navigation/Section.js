@@ -7,7 +7,7 @@ import '../../css/bootstrap.css';
 import '../../css/style.css';
 import '../../css/styles_co.css'
 import '../../css/SpryAccordion.css';
-import '../Home/Home.css';
+import '../../css/Home.css';
 
 class Section extends React.Component {
     constructor(props) {

@@ -11,7 +11,7 @@ import '../../css/bootstrap.css';
 import '../../css/style.css';
 import '../../css/styles_co.css'
 import '../../css/SpryAccordion.css';
-import '../Home/Home.css';
+import '../../css/Home.css';
 import '../../css/styleblockly.css';
 
 class RoO extends React.Component {
