@@ -10,6 +10,10 @@ body {
   display: block;
   height: 60px;
 }
+.column {
+  float: left;
+  width: 50%;
+}
 .nav .nav-item {
   text-decoration: none;
   box-sizing: border-box;
@@ -23,7 +27,7 @@ body {
   border-radius: 2px;
   border: solid 1px #eeeeee;
   margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   opacity: 0.98;
   background-color: white;
 }
