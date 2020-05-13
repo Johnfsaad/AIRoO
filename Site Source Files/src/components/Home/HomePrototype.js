@@ -139,6 +139,23 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        <div className="container-small">
+                            <div className="mene">
+                                <div className='mene-header'>
+                                    <div style={{textAlign:'center'}}>
+                                        <h1>
+                                            Video tutorial
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style={{textAlign:'center'}}>
+                            <video id="background-video" width="750" height="315" controls>
+                                <source src={require("../../media/Getting Started Project.mp4")} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                     </section>
                     <div className="agileits-partners py-sm-5 py-4" id="partners">
                         <div className="container py-lg-5">

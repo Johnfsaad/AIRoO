@@ -1,0 +1,110 @@
+body {
+  background-color: #FEFEFE;
+}
+* {
+  -webkit-transition: background-color 300ms, opacity 300ms;
+  transition: background-color 300ms, opacity 300ms;
+}
+.nav {
+  width: 100%;
+  display: block;
+  height: 60px;
+}
+.nav .nav-item {
+  text-decoration: none;
+  box-sizing: border-box;
+  height: 60px;
+  line-height: 60px;
+  float: left;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.mene {
+  border-radius: 2px;
+  border: solid 1px #eeeeee;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  opacity: 0.98;
+  background-color: white;
+}
+.mene:hover {
+  opacity: 1;
+}
+.mene .mene-header {
+  display: block;
+  width: 100%;
+  border-radius-top-left: 2px;
+  border-radius-top-right: 2px;
+  padding: 16px;
+}
+.mene .mene-img {
+  width: 100%;
+}
+.mene h1 {
+  font-size: 2em;
+  padding: 0px;
+  margin: 0px;
+}
+.mene h1 span {
+  width: 100%;
+  display: block;
+  font-size: 12px !important;
+  color: #888;
+}
+.mene h1 span strong {
+  color: #7b7b7b;
+}
+.mene .mene-description {
+  text-size: 12px;
+  padding: 16px;
+  padding: 0px;
+  margin: 0px;
+}
+.mene .mene-actions {
+  padding: 16px;
+  border-top: solid 1px #eeeeee;
+}
+.mene .mene-actions .button-action {
+  font-size: 18px;
+  color: #a2a2a2;
+  -webkit-transition: color 300ms;
+  transition: color 300ms;
+  background: transparent;
+}
+.mene .mene-actions .button-action:hover,
+.mene .mene-actions .button-action:active,
+.mene .mene-actions .button-action:focus {
+  background: transparent;
+  color: #7b7b7b;
+}
+.container-small {
+  width: 500px;
+  margin: auto;
+}
+@media screen and (max-width: 767px) {
+  .container-small {
+    width: 100%;
+    padding: 16px;
+  }
+}
+.center-block {
+  margin: 0 auto;
+  display: table;
+}
+.nav-blue {
+  background-color: #000;
+}
+.nav-blue a {
+  color: white !important;
+}
+.nav-blue a:hover,
+.nav-blue a:focus,
+.nav-blue a:active {
+  background-color: #444;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
